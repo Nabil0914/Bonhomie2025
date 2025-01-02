@@ -1,0 +1,89 @@
+.card-container {
+    perspective: 1500px; /* Increased perspective for more depth */
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smooth and dramatic flip effect */
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover {
+    transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+.card-face {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* To prevent content overflow */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Shadow around the card */
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover .card-face {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.card-front {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    padding: 20px;
+    z-index: 1;
+}
+
+.card-back {
+    background-color: #4A90E2;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: rotateY(180deg);
+    position: absolute;
+    padding: 20px;
+    z-index: 0;
+}
+
+.card img {
+    border-radius: 15px;
+    max-height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.15); /* Scale image for hover effect */
+    filter: brightness(1.1); /* Brighten image on hover */
+}
+
+.card-back button {
+    padding: 12px 24px;
+    background-color: white;
+    color: #4A90E2;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s ease;
+}
+
+.card-back button:hover {
+    background-color: #4A90E2;
+    color: white;
+    transform: translateY(-3px); /* Slight lift effect on button hover */
+}
+
+.card-back button:active {
+    transform: translateY(1px); /* Slight press effect */
+}
