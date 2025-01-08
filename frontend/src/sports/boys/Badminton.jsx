@@ -2,23 +2,60 @@ import React, { useState } from 'react';
 
 const BadmintonRegistration = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
+    participantName: '',
     year: '',
     department: '',
     rollNo: '',
     email: '',
-    contact: '',
+    contactNo: '',
+    eventName: 'Badminton',
+    eventType: 'boys',
+    eventCategory: 'individual',
   });
+
+  const [message, setMessage] = useState('');   // To store message (success or error)
+  const [messageType, setMessageType] = useState(''); // To track the message type (success or error)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // handle form submission (e.g., send data to server)
-    console.log(formData);
+    try {
+      const response = await fetch('http://localhost:3000/individual-sports', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          participantName: formData.participantName,
+          year: formData.year,
+          department: formData.department,
+          rollNo: formData.rollNo,
+          email: formData.email,
+          contactNo: formData.contactNo,
+          eventName: 'Badminton',
+          eventType: 'boys',
+          eventCategory: 'individual',
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setMessage('Registration successful!');
+        setMessageType('success');
+      } else {
+        setMessage(`Error: ${result.message}`);
+        setMessageType('error');
+      }
+    } catch (error) {
+      setMessage('An error occurred during registration.');
+      setMessageType('error');
+      console.error('Error:', error);
+    }
   };
 
   return (
@@ -27,17 +64,31 @@ const BadmintonRegistration = () => {
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
           Boys Badminton Registration Form
         </h2>
+
+        {/* Conditionally Render Success or Error Alert */}
+        {message && (
+          <div
+            className={`p-4 mb-4 text-sm ${
+              messageType === 'success'
+                ? 'text-green-800 bg-green-200'
+                : 'text-red-800 bg-red-200'
+            } rounded-lg`}
+            role="alert"
+          >
+            {message}
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="space-y-6">
-          
           {/* Full Name */}
           <div>
-            <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <label htmlFor="participantName" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
             <input 
               type="text" 
-              id="fullName" 
-              name="fullName" 
+              id="participantName" 
+              name="participantName" 
               placeholder="Enter your full name" 
-              value={formData.fullName}
+              value={formData.participantName}
               onChange={handleChange}
               required 
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200"
@@ -120,11 +171,11 @@ const BadmintonRegistration = () => {
 
           {/* Contact */}
           <div>
-            <label htmlFor="contact" className="block text-sm font-medium text-gray-700 mb-1">Contact No.</label>
+            <label htmlFor="contactNo" className="block text-sm font-medium text-gray-700 mb-1">Contact No.</label>
             <input 
               type="text" 
-              id="contact" 
-              name="contact" 
+              id="contactNo" 
+              name="contactNo" 
               placeholder="Enter contact number" 
               value={formData.contact}
               onChange={handleChange}
