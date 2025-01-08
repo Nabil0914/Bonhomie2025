@@ -5,39 +5,53 @@ const CulturalPage = () => {
     const [formStatus, setFormStatus] = useState('');
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage dropdown menu
 
-    const EventCard = ({ imgSrc, title, to }) => (
-        <div className="w-72 h-80 card-container">
-            <div className="card">
-                <div className="card-face card-front">
-                    <img src={imgSrc} alt={title} className="w-full h-48 rounded-lg" />
-                    <h4 className="text-xl font-semibold mt-4">{title}</h4>
-                </div>
-                <div className="card-face card-back">
-                    <h4 className="text-2xl font-bold mb-10">{title}</h4>
-                    <Link to={to} className="px-4 py-2 bg-blue-600 text-white rounded">
-                        Register
-                    </Link>
-                </div>
-            </div>
-        </div>
-    );
+    const EventCard = ({ imgSrc, title, to, rule }) => {
+                return (
+                    <div className="w-72 h-80 card-container">
+                        <div className="card">
+                            <div className="card-face card-front">
+                                <img
+                                    src={imgSrc}
+                                    alt={title}
+                                    className="w-full h-48 rounded-lg object-cover"
+                                />
+                                <h4 className="text-xl font-semibold mt-4">{title}</h4>
+                            </div>
+                            <div className="card-face card-back">
+                                <h4 className="text-2xl font-bold mb-10">{title}</h4>
+                                <Link to={to} className="register-link px-4 py-2 mb-7 font-bold rounded">
+                                    Register
+                                </Link>
+                                {rule ? (
+                                    <Link to={rule} className="register-link px-4 py-2 mb-7 font-bold rounded">
+                                        View Rules
+                                    </Link>
+                                ) : (
+                                    <p className="text-gray-500">Rules not available</p>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                );
+            };
 
-    const culturalEvents = [
-        { imgSrc: "../src/assets/mehendi.jpg", title: "Mehndi", to: "/mehndi" },
-        { imgSrc: "../src/assets/rangoli.png", title: "Rangoli", to: "/rangoli" },
-        { imgSrc: "../src/assets/speech.png", title: "Vernacular Speech", to: "/speech" },
-        { imgSrc: "../src/assets/lippan.jpeg", title: "Lippan Art", to: "/lippan" },
-        { imgSrc: "../src/assets/doodle.png", title: "Doodling", to: "/doodling" },
-        { imgSrc: "../src/assets/cooking.jpeg", title: "Cooking Competition", to: "/cooking" },
-        { imgSrc: "../src/assets/qirat.png", title: "Qirat", to: "/qirat" },
-        { imgSrc: "../src/assets/treasure.jpeg", title: "Treasure Hunt", to: "/treasure" },
-        { imgSrc: "../src/assets/standup.png", title: "Stand-Up Comedy", to: "/standup" },
-        { imgSrc: "../src/assets/naat.png", title: "Hamd-o-Naat", to: "/naat" },
-        { imgSrc: "../src/assets/mushaira.jpeg", title: "Mushaira", to: "/mushaira" },
-        { imgSrc: "../src/assets/pot.jpeg", title: "Pot Painting", to: "/potpainting" },
-        { imgSrc: "../src/assets/debate.png", title: "Debate", to: "/debate" },
-        { imgSrc: "../src/assets/zaika.jpeg", title: "Zaika", to: "/zaika" }
-    ];
+            const culturalEvents = [
+                { imgSrc: "../src/assets/mehendi.jpg", title: "Mehndi", to: "/mehndi", rule: "/mehendirules" },
+                { imgSrc: "../src/assets/rangoli.png", title: "Rangoli", to: "/rangoli", rule: "/rangolirules" },
+                { imgSrc: "../src/assets/speech.png", title: "Vernacular Speech", to: "/speech", rule: "/speechrules" },
+                { imgSrc: "../src/assets/lippan.jpeg", title: "Lippan Art", to: "/lippan", rule: "/lippanrules" },
+                { imgSrc: "../src/assets/doodle.png", title: "Doodling", to: "/doodling", rule: "/doodlingrules" },
+                { imgSrc: "../src/assets/cooking.jpeg", title: "Cooking Competition", to: "/cooking", rule: "/cookingrules" },
+                { imgSrc: "../src/assets/qirat.png", title: "Qirat", to: "/qirat", rule: "/qiratrules" },
+                { imgSrc: "../src/assets/treasure.jpeg", title: "Treasure Hunt", to: "/treasure", rule: "/treasurehuntrules" },
+                { imgSrc: "../src/assets/standup.png", title: "Stand-Up Comedy", to: "/standup", rule: "/standuprules" },
+                { imgSrc: "../src/assets/naat.png", title: "Hamd-o-Naat", to: "/naat", rule: "/naatrules" },
+                { imgSrc: "../src/assets/mushaira.jpeg", title: "Mushaira", to: "/mushaira", rule: "/mushairarules" },
+                { imgSrc: "../src/assets/pot.jpeg", title: "Pot Painting", to: "/potpainting", rule: "/potpaintingrules" },
+                { imgSrc: "../src/assets/debate.png", title: "Debate", to: "/debate", rule: "/debaterules" },
+                { imgSrc: "../src/assets/zaika.jpeg", title: "Zaika", to: "/zaika", rule: "/zaikarules" }
+            ];
+            
 
     const eventSchedule = [
         { time: "9:00 AM", title: "Opening Ceremony", description: "Ceremonial march and special performances.", venue: "Main Stage" },
@@ -54,6 +68,7 @@ const CulturalPage = () => {
                 imgSrc={event.imgSrc}
                 title={event.title}
                 to={event.to}
+                rule={event.rule}
             />
         ));
     };

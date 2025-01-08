@@ -4,60 +4,66 @@ import "./cards.css";
 
 const EventPage = () => {
         const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const EventCard = ({ imgSrc, title, to }) => (
-        <div className="w-72 h-80 card-container">
-            <div className="card">
-                <div className="card-face card-front">
-                    <img
-                        src={imgSrc}
-                        alt={title}
-                        className="w-full h-48 rounded-lg object-cover"
-                    />
-                    <h4 className="text-xl font-semibold mt-4">{title}</h4>
+        const EventCard = ({ imgSrc, title, to, rule }) => {
+            return (
+                <div className="w-72 h-80 card-container">
+                    <div className="card">
+                        <div className="card-face card-front">
+                            <img
+                                src={imgSrc}
+                                alt={title}
+                                className="w-full h-48 rounded-lg object-cover"
+                            />
+                            <h4 className="text-xl font-semibold mt-4">{title}</h4>
+                        </div>
+                        <div className="card-face card-back">
+                            <h4 className="text-2xl font-bold mb-10">{title}</h4>
+                            <Link to={to} className="register-link px-4 py-2 mb-7 font-bold rounded">
+                                Register
+                            </Link>
+                            {rule ? (
+                                <Link to={rule} className="register-link px-4 py-2 mb-7 font-bold rounded">
+                                    View Rules
+                                </Link>
+                            ) : (
+                                <p className="text-gray-500">Rules not available</p>
+                            )}
+                        </div>
+                    </div>
                 </div>
-                <div className="card-face card-back">
-                    <h4 className="text-2xl font-bold mb-10">{title}</h4>
-                    <Link to={to} className="px-4 py-2 mb-7 bg-blue-600 text-white rounded">
-                        Register
-                    </Link>
-                    <Link to={to} className="px-4 py-2 bg-blue-600 text-white rounded">
-                        View Rules
-                    </Link>
-                </div>
-            </div>
-        </div>
-    );
+            );
+        };
 
-    const boysIndividualEvents = [
-        { imgSrc: "../src/assets/chess.png", title: "Chess", to: "/boyschess" },
-        { imgSrc: "../src/assets/pushup.png", title: "Pushups", to: "/boyspushup" },
-        { imgSrc: "../src/assets/discussthrow.png", title: "Discuss Throw", to: "/boysdiscuss" },
-        { imgSrc: "../src/assets/running.png", title: "Race 100m", to: "/boysrunning" },
-        { imgSrc: "../src/assets/shotput.jpeg", title: "Shot Put", to: "/boysshotput" },
-        { imgSrc: "../src/assets/badminton.png", title: "Badminton", to: "/boysbadminton" },
-        { imgSrc: "../src/assets/weight.png", title: "Weight Lifting", to: "/boysweightlifting" },
-    ];
-
-    const boysGroupEvents = [
-        { imgSrc: "../src/assets/boxcricket.png", title: "Box Cricket", to: "/boysboxcricket" },
-        { imgSrc: "../src/assets/football.png", title: "Football", to: "/boysfootball" },
-        { imgSrc: "../src/assets/relay.png", title: "Relay Race", to: "/boysrelay" },
-    ];
-
-    const girlsIndividualEvents = [
-        { imgSrc: "../src/assets/chess.png", title: "Chess", to: "/girlschess" },
-        { imgSrc: "../src/assets/discussthrow.png", title: "Discuss Throw", to: "/girlsdiscuss" },
-        { imgSrc: "../src/assets/running.png", title: "Race 100m", to: "/girlsrunning" },
-        { imgSrc: "../src/assets/shotput.jpeg", title: "Shot Put", to: "/girlsshotput" },
-        { imgSrc: "../src/assets/badminton.png", title: "Badminton", to: "/girlsbadminton" },
-    ];
-
-    const girlsGroupEvents = [
-        { imgSrc: "../src/assets/boxcricket.png", title: "Box Cricket", to: "/girlsboxcricket" },
-        { imgSrc: "../src/assets/football.png", title: "Football", to: "/girlsfootball" },
-        { imgSrc: "../src/assets/relay.png", title: "Relay Race", to: "/girlsrelay" },
-    ];
-
+        const boysIndividualEvents = [
+            { imgSrc: "../src/assets/chess.png", title: "Chess", to: "/boyschess", rule: "/cookingrules" },
+            { imgSrc: "../src/assets/pushup.png", title: "Pushups", to: "/boyspushup", rule: "/pushuprules" },
+            { imgSrc: "../src/assets/discussthrow.png", title: "Discuss Throw", to: "/boysdiscuss", rule: "/shotput-discussrule" },
+            { imgSrc: "../src/assets/running.png", title: "Race 100m", to: "/boysrunning", rule: "/racerules" },
+            { imgSrc: "../src/assets/shotput.jpeg", title: "Shot Put", to: "/boysshotput", rule: "/shotput-discussrule" },
+            { imgSrc: "../src/assets/badminton.png", title: "Badminton", to: "/boysbadminton", rule: "/bgmirules" },
+            { imgSrc: "../src/assets/weight.png", title: "Weight Lifting", to: "/boysweightlifting", rule: "/weightliftingrules" },
+        ];
+        
+        const boysGroupEvents = [
+            { imgSrc: "../src/assets/boxcricket.png", title: "Box Cricket", to: "/boysboxcricket", rule: "/boxcricketrules" },
+            { imgSrc: "../src/assets/football.png", title: "Football", to: "/boysfootball", rule: "/footballrules" },
+            { imgSrc: "../src/assets/relay.png", title: "Relay Race", to: "/boysrelay", rule: "/relayrules" },
+        ];
+        
+        const girlsIndividualEvents = [
+            { imgSrc: "../src/assets/chess.png", title: "Chess", to: "/girlschess", rule: "/Chessrules" },
+            { imgSrc: "../src/assets/discussthrow.png", title: "Discuss Throw", to: "/girlsdiscuss", rule: "/shotput-discussrule" },
+            { imgSrc: "../src/assets/running.png", title: "Race 100m", to: "/girlsrunning", rule: "/racerules" },
+            { imgSrc: "../src/assets/shotput.jpeg", title: "Shot Put", to: "/girlsshotput", rule: "/shotput-discussrule" },
+            { imgSrc: "../src/assets/badminton.png", title: "Badminton", to: "/girlsbadminton", rule: "/bgmirules" },
+        ];
+        
+        const girlsGroupEvents = [
+            { imgSrc: "../src/assets/boxcricket.png", title: "Box Cricket", to: "/girlsboxcricket", rule: "/boxcricketrules" },
+            { imgSrc: "../src/assets/football.png", title: "Football", to: "/girlsfootball", rule: "/footballrules" },
+            { imgSrc: "../src/assets/relay.png", title: "Relay Race", to: "/girlsrelay", rule: "/relayrules" },
+        ];
+        
     const eventSchedule = [
         { time: "9:00 AM", title: "Opening Ceremony", description: "Ceremonial march and special performances.", venue: "Football Ground" },
         { time: "9:30 AM", title: "Basketball", description: "Team basketball competition.", venue: "Basketball Court" },
@@ -75,6 +81,7 @@ const EventPage = () => {
                 imgSrc={event.imgSrc}
                 title={event.title}
                 to={event.to}
+                rule={event.rule}
             />
         ));
     };
