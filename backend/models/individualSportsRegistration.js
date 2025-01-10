@@ -7,7 +7,7 @@ const IndividualSportsRegistrationSchema = new mongoose.Schema({
     },
     eventType : {
         type : String,
-        enum : ['boys', 'girls'],
+        enum : ['boys', 'girls', 'both'],
         required : false
     },
     eventCategory : {
