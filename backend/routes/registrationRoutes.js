@@ -65,6 +65,8 @@ export const individual = async (req, res) => {
   }
 };
 
+
+//Group registration api
 export const group = async (req, res) => {
   try {
     const {
