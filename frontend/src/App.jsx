@@ -15,9 +15,13 @@ import BadmintonRegistration from './sports/boys/Badminton';
 import ChessRegistration from './sports/boys/Chess';
 import DiscussThrowRegistration from './sports/boys/DisscussThrow';
 import PushupsRegistration from './sports/boys/Pushup';
-import WeightLiftingRegistration from './sports/boys/Weightlift';
 import RunningRaceRegistration from './sports/boys/Race';
 import ShotputRegistration from './sports/boys/Shotput';
+import VolleyballRegistration from './sports/boys/volleyball.jsx';
+import BGMIRegistrationForm from './sports/boys/BGMI.jsx';
+import CricketRegistration from './sports/boys/Cricket.jsx';
+import CarromRegistration from './sports/boys/Carrom.jsx';
+import TabletennisRegistration from './sports/boys/Tabletennis.jsx';
 
 // Importing registration components for girls' sports events
 import GirlsBadmintonRegistration from './sports/girls/Badminton';
@@ -28,6 +32,12 @@ import GirlsChessRegistration from './sports/girls/Chess';
 import GirlsShotputRegistration from './sports/girls/Shotput';
 import GirlsRunningRaceRegistration from './sports/girls/Race';
 import GirlsDiscussThrowRegistration from './sports/girls/DisscussThrow';
+import GirlsVolleyballRegistration from './sports/girls/Volleyball.jsx';
+import GirlsTugOfWarRegistration from './sports/girls/Tugofwar.jsx';
+import GirlsThreeLegRaceRegistration from './sports/girls/Threelegrace.jsx';
+import GirlsThrowBallRegistration from './sports/girls/Throwball.jsx';
+import GirlsArmwrestlingRegistration from './sports/girls/Armwrestling.jsx';
+import GirlsCarromRegistration from './sports/girls/Carrom.jsx';
 
 // Importing registration components for cultural events
 import CookingCompetitionRegistration from './cultural/events/cooking';
@@ -92,9 +102,13 @@ const App = () => {
                 <Route path="/boyschess" element={<ChessRegistration />} /> {/* Boys' Chess Registration */}
                 <Route path="/boysdiscuss" element={<DiscussThrowRegistration />} /> {/* Boys' Discuss Throw Registration */}
                 <Route path="/boyspushup" element={<PushupsRegistration />} /> {/* Boys' Pushups Registration */}
-                <Route path="/boysweightlifting" element={<WeightLiftingRegistration />} /> {/* Boys' Weightlifting Registration */}
                 <Route path="/boysrunning" element={<RunningRaceRegistration />} /> {/* Boys' Running Race Registration */}
                 <Route path="/boysshotput" element={<ShotputRegistration />} /> {/* Boys' Shotput Registration */}
+                <Route path="/boysvolleyball" element={<VolleyballRegistration />} /> 
+                <Route path="/boysBGMI" element={<BGMIRegistrationForm/>} /> 
+                <Route path="/boyscricket" element={<CricketRegistration />} /> 
+                <Route path="/boyscarrom" element={<CarromRegistration />} /> 
+                <Route path="/boystabletennis" element={<TabletennisRegistration/>} />
 
                 {/* Routes for girls' sports events */}
                 <Route path="/girlsbadminton" element={<GirlsBadmintonRegistration />} /> {/* Girls' Badminton Registration */}
@@ -105,7 +119,14 @@ const App = () => {
                 <Route path="/girlsshotput" element={<GirlsShotputRegistration />} /> {/* Girls' Shotput Registration */}
                 <Route path="/girlsrunning" element={<GirlsRunningRaceRegistration />} /> {/* Girls' Running Race Registration */}
                 <Route path="/girlsdiscuss" element={<GirlsDiscussThrowRegistration />} /> {/* Girls' Discuss Throw Registration */}
-
+                <Route path="/girlsvolleyball" element={<GirlsVolleyballRegistration/>} /> 
+                <Route path="/girlstugofwar" element={<GirlsTugOfWarRegistration />} /> 
+                <Route path="/girlsthreelegrace" element={<GirlsThreeLegRaceRegistration/>} /> 
+                <Route path="/girlsthrowball" element={<GirlsThrowBallRegistration />} />
+                <Route path="/girlsarmwrestling" element={<GirlsArmwrestlingRegistration />} />
+                <Route path="/girlscarrom" element={<GirlsCarromRegistration/>} /> 
+                
+                
                 {/* Routes for cultural events registration */}
                 <Route path="/cooking" element={<CookingCompetitionRegistration />} /> {/* Cooking Competition Registration */}
                 <Route path="/debate" element={<DebateRegistration />} /> {/* Debate Registration */}
