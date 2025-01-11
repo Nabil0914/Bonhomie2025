@@ -35,19 +35,25 @@ const EventPage = () => {
         };
 
         const boysIndividualEvents = [
-            { imgSrc: "../src/assets/chess.png", title: "Chess", to: "/boyschess", rule: "/cookingrules" },
+            { imgSrc: "../src/assets/chess.png", title: "Chess", to: "/boyschess", rule: "/Chessrules" },
             { imgSrc: "../src/assets/pushup.png", title: "Pushups", to: "/boyspushup", rule: "/pushuprules" },
             { imgSrc: "../src/assets/discussthrow.png", title: "Discuss Throw", to: "/boysdiscuss", rule: "/shotput-discussrule" },
             { imgSrc: "../src/assets/running.png", title: "Race 100m", to: "/boysrunning", rule: "/racerules" },
             { imgSrc: "../src/assets/shotput.jpeg", title: "Shot Put", to: "/boysshotput", rule: "/shotput-discussrule" },
             { imgSrc: "../src/assets/badminton.png", title: "Badminton", to: "/boysbadminton", rule: "/bgmirules" },
-            { imgSrc: "../src/assets/weight.png", title: "Weight Lifting", to: "/boysweightlifting", rule: "/weightliftingrules" },
+            { imgSrc: "../src/assets/tabletennis.png", title: "Table Tennis", to: "/boystabletennis", rule: "/bgmirules" },
         ];
         
         const boysGroupEvents = [
             { imgSrc: "../src/assets/boxcricket.png", title: "Box Cricket", to: "/boysboxcricket", rule: "/boxcricketrules" },
             { imgSrc: "../src/assets/football.png", title: "Football", to: "/boysfootball", rule: "/footballrules" },
             { imgSrc: "../src/assets/relay.png", title: "Relay Race", to: "/boysrelay", rule: "/relayrules" },
+            { imgSrc: "../src/assets/volleyball.png", title: "VolleyBall", to: "/boysvolleyball", rule: "/relayrules" },
+            { imgSrc: "../src/assets/BGMI.webp", title: "BGMI", to: "/boysBGMI", rule: "/relayrules" },
+            { imgSrc: "../src/assets/cricket.jpeg", title: "Cricket", to: "/boyscricket", rule: "/relayrules" },
+            { imgSrc: "../src/assets/carrom.png", title: "Carrom", to: "/boyscarrom", rule: "/bgmirules" }
+            
+            
         ];
         
         const girlsIndividualEvents = [
@@ -56,12 +62,25 @@ const EventPage = () => {
             { imgSrc: "../src/assets/running.png", title: "Race 100m", to: "/girlsrunning", rule: "/racerules" },
             { imgSrc: "../src/assets/shotput.jpeg", title: "Shot Put", to: "/girlsshotput", rule: "/shotput-discussrule" },
             { imgSrc: "../src/assets/badminton.png", title: "Badminton", to: "/girlsbadminton", rule: "/bgmirules" },
+            { imgSrc: "../src/assets/armwrestling.png", title: "Arm Wrestling", to: "/girlsarmwrestling", rule: "/bgmirules" },
+
+            
+
+            
+            
         ];
         
         const girlsGroupEvents = [
             { imgSrc: "../src/assets/boxcricket.png", title: "Box Cricket", to: "/girlsboxcricket", rule: "/boxcricketrules" },
             { imgSrc: "../src/assets/football.png", title: "Football", to: "/girlsfootball", rule: "/footballrules" },
             { imgSrc: "../src/assets/relay.png", title: "Relay Race", to: "/girlsrelay", rule: "/relayrules" },
+            { imgSrc: "../src/assets/tugofwar.png", title: "Tug of War", to: "/girlstugofwar", rule: "/bgmirules" },
+            { imgSrc: "../src/assets/volleyball.png", title: "VolleyBall", to: "/girlsvolleyball", rule: "/bgmirules" },
+            { imgSrc: "../src/assets/throwball.jpg", title: "ThrowBall", to: "/girlsthrowball", rule: "/bgmirules" },
+            { imgSrc: "../src/assets/threelegrace.jpg", title: "Three Leg Race", to: "/girlsthreelegrace", rule: "/bgmirules" },
+            { imgSrc: "../src/assets/carrom.png", title: "Carrom", to: "/girlscarrom", rule: "/bgmirules" },
+            
+            
         ];
         
     const eventSchedule = [
