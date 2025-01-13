@@ -9,7 +9,7 @@ const TabletennisRegistration = () => {
         email: '',
         contactNo: '',
         eventName: 'Armwrestling',
-        eventType: 'mixed',
+        eventType: 'both',
         eventCategory: 'individual',
     });
 
@@ -37,7 +37,7 @@ const TabletennisRegistration = () => {
                     email: formData.email,
                     contactNo: formData.contactNo,
                     eventName: 'Armwrestling',
-                    eventType: 'mixed',
+                    eventType: 'both',
                     eventCategory: 'individual',
                 }),
             });
