@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const CricketRegistration = () => {
+const CrickeRegistration = () => {
     const [teamLead, setTeamLead] = useState({
         name: '',
         year: '',
@@ -13,7 +13,7 @@ const CricketRegistration = () => {
         { name: '', rollNo: '', department: '', year: '' },
     ]);
 
-    const [eventName] = useState('Box Cricket');
+    const [eventName] = useState('Cricket');
     const [eventType] = useState('boys');
     const [eventCategory] = useState('group');
 
@@ -37,10 +37,10 @@ const CricketRegistration = () => {
     };
 
     const addMember = () => {
-        if (teamMembers.length < 8) {
+        if (teamMembers.length < 2) {
             setTeamMembers([...teamMembers, { name: '', rollNo: '', department: '', year: '' }]);
         } else {
-            alert('You can only add up to 8 members.');
+            alert('You can only add up to 2 members.');
         }
     };
 
@@ -48,8 +48,8 @@ const CricketRegistration = () => {
         e.preventDefault();
 
 
-        if (teamMembers.length < 8) {
-            alert("Please provide at least 8 team members.");
+        if (teamMembers.length < 2) {
+            alert("Please provide at least 2 team members.");
             return;
         }
 
@@ -306,4 +306,4 @@ const CricketRegistration = () => {
     );
 };
 
-export default CricketRegistration;
+export default CrickeRegistration;

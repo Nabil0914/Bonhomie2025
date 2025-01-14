@@ -1,160 +1,201 @@
 import React, { useState } from 'react';
 
 const GirlsCarromRegistration = () => {
-    const [teamMembers, setTeamMembers] = useState([
-            { name: "", rollNo: "", department: "", year: "" },
-        ]);
-    
-        const departments = [
-            "CO",
-            "AIML",
-            "DS",
-            "CIVIL",
-            "ME",
-            "ELECTRICAL",
-            "ECS",
-            "ARCHI",
-            "D.PHARMA",
-            "PHARMACY",
-        ];
-        const years = ["1st", "2nd", "3rd", "4th", "5th"];
-    
-        const addMember = () => {
-            if (teamMembers.length >= 2) {
-                alert("You can only add up to 2 members.");
-                return;
-            }
-            setTeamMembers([
-                ...teamMembers,
-                { name: "", rollNo: "", department: "", year: "" },
-            ]);
-        };
-    
-        const handleInputChange = (index, field, value) => {
-            const updatedMembers = [...teamMembers];
-            updatedMembers[index][field] = value;
-            setTeamMembers(updatedMembers);
-        };
-    
-        const handleSubmit = (e) => {
+  const [formData, setFormData] = useState({
+    participantName: '',
+    year: '',
+    department: '',
+    rollNo: '',
+    email: '',
+    contactNo: '',
+    eventName: 'Carrom',
+    eventType: 'girls',
+    eventCategory: 'individual',
+  });
+
+  const [message, setMessage] = useState('');   // To store message (success or error)
+          const [messageType, setMessageType] = useState(''); // To track the message type (success or error)
+        
+          const handleChange = (e) => {
+            const { name, value } = e.target;
+            setFormData({ ...formData, [name]: value });
+          };
+        
+          const handleSubmit = async (e) => {
             e.preventDefault();
-            console.log("Submitted Team Members: ", teamMembers);
-            alert("Form submitted successfully!");
-        };
-    
-        return (
-            <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-orange-500 to-blue-600">
-                <div className="bg-white rounded-lg shadow-lg p-8 max-w-xl w-full">
-                    <h2 className="text-2xl font-bold text-center text-orange-500 mb-4">
-                        Carrom Registration Form (Boys)
-                    </h2>
-                    <form onSubmit={handleSubmit}>
-                        {/* Team Members Section */}
-                        <h3 className="text-xl font-semibold text-gray-700 mb-2">
-                            Team Member Details
-                        </h3>
-                        <p className="text-sm text-red-500 mb-4">Note: Only 2 members</p>
-    
-                        {teamMembers.map((member, index) => (
-                            <div key={index} className="mb-6 border-b pb-4">
-                                <h4 className="text-lg font-medium text-gray-600">
-                                    Member {index + 1}
-                                </h4>
-                                <div className="mb-3">
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                                        Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        value={member.name}
-                                        onChange={(e) =>
-                                            handleInputChange(index, "name", e.target.value)
-                                        }
-                                        placeholder="Enter member name"
-                                        className="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
-                                        required
-                                    />
-                                </div>
-                                <div className="mb-3">
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                                        Roll Number
-                                    </label>
-                                    <input
-                                        type="text"
-                                        value={member.rollNo}
-                                        onChange={(e) =>
-                                            handleInputChange(index, "rollNo", e.target.value)
-                                        }
-                                        placeholder="Enter roll number"
-                                        className="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
-                                        required
-                                    />
-                                </div>
-                                <div className="mb-3">
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                                        Department
-                                    </label>
-                                    <select
-                                        value={member.department}
-                                        onChange={(e) =>
-                                            handleInputChange(index, "department", e.target.value)
-                                        }
-                                        className="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
-                                        required
-                                    >
-                                        <option value="">Select Department</option>
-                                        {departments.map((dept) => (
-                                            <option key={dept} value={dept}>
-                                                {dept}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </div>
-                                <div className="mb-3">
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                                        Year
-                                    </label>
-                                    <select
-                                        value={member.year}
-                                        onChange={(e) =>
-                                            handleInputChange(index, "year", e.target.value)
-                                        }
-                                        className="w-full border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500"
-                                        required
-                                    >
-                                        <option value="">Select Year</option>
-                                        {years.map((year) => (
-                                            <option key={year} value={year}>
-                                                {year}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </div>
-                            </div>
-                        ))}
-    
-                        {/* Add Member Button */}
-                        <button
-                            type="button"
-                            onClick={addMember}
-                            className="px-4 py-2 bg-green-500 text-white rounded-md shadow-sm hover:bg-green-600"
-                        >
-                            Add Team Member
-                        </button>
-    
-                        {/* Submit Button */}
-                        <div className="text-center mt-6">
-                            <button
-                                type="submit"
-                                className="px-6 py-2 bg-orange-500 text-white rounded-md shadow-sm hover:bg-orange-600"
-                            >
-                                Register
-                            </button>
-                        </div>
-                    </form>
-                </div>
+            try {
+              const response = await fetch('http://localhost:3000/individual-sports', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  participantName: formData.participantName,
+                  year: formData.year,
+                  department: formData.department,
+                  rollNo: formData.rollNo,
+                  email: formData.email,
+                  contactNo: formData.contactNo,
+                  eventName: 'Carrom',
+                  eventType: 'girls',
+                  eventCategory: 'individual',
+                }),
+              });
+        
+              const result = await response.json();
+        
+              if (response.ok) {
+                setMessage('Registration successful!');
+                setMessageType('success');
+              } else {
+                setMessage(`Error: ${result.message}`);
+                setMessageType('error');
+              }
+            } catch (error) {
+              setMessage('An error occurred during registration.');
+              setMessageType('error');
+              console.error('Error:', error);
+            }
+          };
+
+          return (
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-orange-500 to-indigo-600">
+              <div className="w-full max-w-lg bg-white rounded-lg shadow-lg p-8">
+                <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+                  Girls Carrom Registration Form
+                </h2>
+        
+                {/* Conditionally Render Success or Error Alert */}
+                {message && (
+                  <div
+                    className={`p-4 mb-4 text-sm ${
+                      messageType === 'success'
+                        ? 'text-green-800 bg-green-200'
+                        : 'text-red-800 bg-red-200'
+                    } rounded-lg`}
+                    role="alert"
+                  >
+                    {message}
+                  </div>
+                )}
+        
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Full Name */}
+                  <div>
+                    <label htmlFor="participantName" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <input 
+                      type="text" 
+                      id="participantName" 
+                      name="participantName" 
+                      placeholder="Enter your full name" 
+                      value={formData.participantName}
+                      onChange={handleChange}
+                      required 
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200"
+                    />
+                  </div>
+        
+                  {/* Year */}
+                  <div>
+                    <label htmlFor="year" className="block text-sm font-medium text-gray-700 mb-1">Year</label>
+                    <select 
+                      id="year" 
+                      name="year" 
+                      value={formData.year}
+                      onChange={handleChange}
+                      required 
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200"
+                    >
+                      <option value="">Select Year</option>
+                      <option value="FE">FE</option>
+                      <option value="SE">SE</option>
+                      <option value="TE">TE</option>
+                      <option value="BE">BE</option>
+                    </select>
+                  </div>
+        
+                  {/* Department */}
+                  <div>
+                    <label htmlFor="department" className="block text-sm font-medium text-gray-700 mb-1">Department</label>
+                    <select 
+                      id="department" 
+                      name="department" 
+                      value={formData.department}
+                      onChange={handleChange}
+                      required 
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200"
+                    >
+                      <option value="">Select Department</option>
+                      <option value="CO">CO</option>
+                      <option value="AIML">AIML</option>
+                      <option value="DS">DS</option>
+                      <option value="CIVIL">CIVIL</option>
+                      <option value="ME">ME</option>
+                      <option value="ELECTRICAL">ELECTRICAL</option>
+                      <option value="ECS">ECS</option>
+                      <option value="ARCHI">ARCHI</option>
+                      <option value="D.PHARMA">D.PHARMA</option>
+                      <option value="PHARMACY">PHARMACY</option>
+                    </select>
+                  </div>
+        
+                  {/* Roll Number */}
+                  <div>
+                    <label htmlFor="rollNo" className="block text-sm font-medium text-gray-700 mb-1">Roll Number</label>
+                    <input 
+                      type="text" 
+                      id="rollNo" 
+                      name="rollNo" 
+                      placeholder="Enter roll number" 
+                      value={formData.rollNo}
+                      onChange={handleChange}
+                      required 
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200"
+                    />
+                  </div>
+        
+                  {/* Email */}
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      placeholder="Enter email" 
+                      value={formData.email}
+                      onChange={handleChange}
+                      required 
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200"
+                    />
+                  </div>
+        
+                  {/* Contact */}
+                  <div>
+                    <label htmlFor="contactNo" className="block text-sm font-medium text-gray-700 mb-1">Contact No.</label>
+                    <input 
+                      type="text" 
+                      id="contactNo" 
+                      name="contactNo" 
+                      placeholder="Enter contact number" 
+                      value={formData.contact}
+                      onChange={handleChange}
+                      required 
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200"
+                    />
+                  </div>
+        
+                  <div className="text-center">
+                    <button 
+                      type="submit" 
+                      className="w-full bg-gradient-to-r from-orange-500 to-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:opacity-90 transition"
+                    >
+                      Register Now
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
-        );
-    };
+          );
+        };
 
 export default GirlsCarromRegistration;

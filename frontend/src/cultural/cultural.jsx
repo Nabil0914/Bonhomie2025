@@ -36,20 +36,25 @@ const CulturalPage = () => {
             };
 
             const culturalEvents = [
-                { imgSrc: "../src/assets/mehendi.jpg", title: "Mehndi", to: "/mehndi", rule: "/mehendirules" },
-                { imgSrc: "../src/assets/rangoli.png", title: "Rangoli", to: "/rangoli", rule: "/rangolirules" },
-                { imgSrc: "../src/assets/speech.png", title: "Vernacular Speech", to: "/speech", rule: "/speechrules" },
-                { imgSrc: "../src/assets/lippan.jpeg", title: "Lippan Art", to: "/lippan", rule: "/lippanrules" },
-                { imgSrc: "../src/assets/doodle.png", title: "Doodling", to: "/doodling", rule: "/doodlingrules" },
-                { imgSrc: "../src/assets/cooking.jpeg", title: "Cooking Competition", to: "/cooking", rule: "/cookingrules" },
-                { imgSrc: "../src/assets/qirat.png", title: "Qirat", to: "/qirat", rule: "/qiratrules" },
-                { imgSrc: "../src/assets/treasure.jpeg", title: "Treasure Hunt", to: "/treasure", rule: "/treasurehuntrules" },
-                { imgSrc: "../src/assets/standup.png", title: "Stand-Up Comedy", to: "/standup", rule: "/standuprules" },
-                { imgSrc: "../src/assets/naat.png", title: "Hamd-o-Naat", to: "/naat", rule: "/naatrules" },
-                { imgSrc: "../src/assets/mushaira.jpeg", title: "Mushaira", to: "/mushaira", rule: "/mushairarules" },
-                { imgSrc: "../src/assets/pot.jpeg", title: "Pot Painting", to: "/potpainting", rule: "/potpaintingrules" },
-                { imgSrc: "../src/assets/debate.png", title: "Debate", to: "/debate", rule: "/debaterules" },
-                { imgSrc: "../src/assets/zaika.jpeg", title: "Zaika", to: "/zaika", rule: "/zaikarules" }
+                { imgSrc: "../src/assets/mehendi.jpg", title: "Mehndi", to: "/mehndi" },
+                { imgSrc: "../src/assets/rangoli.png", title: "Rangoli", to: "/rangoli" },
+                { imgSrc: "../src/assets/speech.png", title: "Vernacular Speech", to: "/speech" },
+                { imgSrc: "../src/assets/lippan.jpeg", title: "Lippan Art", to: "/lippan" },
+                { imgSrc: "../src/assets/doodle.png", title: "Doodling", to: "/doodling" },
+                { imgSrc: "../src/assets/cooking.jpeg", title: "Cooking Competition", to: "/cooking" },
+                { imgSrc: "../src/assets/qirat.png", title: "Qirat", to: "/qirat"},
+                { imgSrc: "../src/assets/treasure.jpeg", title: "Treasure Hunt", to: "/treasure" },
+                { imgSrc: "../src/assets/standup.png", title: "Stand-Up Comedy", to: "/standup" },
+                { imgSrc: "../src/assets/naat.png", title: "Hamd-o-Naat", to: "/naat" },
+                { imgSrc: "../src/assets/mushaira.jpeg", title: "Mushaira", to: "/mushaira" },
+                { imgSrc: "../src/assets/pot.jpeg", title: "Pot Painting", to: "/potpainting" },
+                { imgSrc: "../src/assets/debate.png", title: "Debate", to: "/debate" },
+                { imgSrc: "../src/assets/zaika.jpeg", title: "Zaika", to: "/zaika" },
+                { imgSrc: "../src/assets/zaika.jpeg", title: "Extempore", to: "/extempore" },
+                { imgSrc: "../src/assets/zaika.jpeg", title: "AUTOCAD", to: "/autocad" },
+                { imgSrc: "../src/assets/zaika.jpeg", title: "Poster", to: "/poster" },
+                { imgSrc: "../src/assets/zaika.jpeg", title: "PPT", to: "/ppt" },
+           
             ];
             
 

@@ -54,32 +54,11 @@ import VernacularSpeechRegistrationForm from './cultural/events/speech';
 import TreasureHuntRegistration from './cultural/events/treasure';
 import ZaikaRegistration from './cultural/events/zaika';
 import StandupComedyRegistrationForm from './cultural/events/standup';
-import ChessRules from './rules/chessrules';
-import DiscusThrowShotPut from './rules/shotput-discussrules';
-import BoxCricketRules from './rules/boxcricketrules';
-import BGMIEventRules from './rules/bgmi';
-import ThreeLegRaceEvent from './rules/3legrace';
-import OpenCricketEventRules from './rules/cricket';
-import FootballEventRules from './rules/footballrules';
-import PushUpEvent from './rules/pushup';
-import RaceEvent from './rules/race';
-import RelayRaceEvent from './rules/relay';
-import TugOfWarEvent from './rules/tugofwar';
-import CookingCompetition from './rules/cooking';
-import DebateEvent from './rules/debate';
-import DoodlingEvent from './rules/doodling';
-import HamdONaatEventRules from './rules/naat.jsx';
-import ExtemporeVernacularSpeechEventRules from './rules/speech';
-import MehendiEventRules from './rules/mehendi.jsx';
-import LippanArtEventRules from './rules/lippan.jsx';
-import PotPaintingEventRules from './rules/potpainting';
-import QiratEventRules from './rules/qirat';
-import RangoliEventRules from './rules/rangoli';
-import TreasureHuntEventRules from './rules/treasure';
-import FoodStallZaikaEventRules from './rules/zaika';
-import MushairaEventRules from './rules/mushaira.jsx';
-import StandUpComedyEventRules from './rules/standup.jsx';
+import ExtemporeRegistration from './cultural/events/extempore.jsx';
 
+import AutoCADCompetitionRegistration from './technical/autocad.jsx';
+import PosterCompetitionRegistration from './technical/poster.jsx';
+import PPTRegistration from './technical/ppt.jsx';
 const App = () => {
     return (
         <div>
@@ -142,34 +121,10 @@ const App = () => {
                 <Route path="/treasure" element={<TreasureHuntRegistration />} /> {/* Treasure Hunt Registration */}
                 <Route path="/zaika" element={<ZaikaRegistration />} /> {/* Zaika Food Stall Registration */}
                 <Route path="/standup" element={<StandupComedyRegistrationForm />} /> {/* Stand-up Comedy Registration */}
-
-                {/* Routes for event rules */}
-                <Route path='/Chessrules' element={<ChessRules />} /> {/* Chess Event Rules */}
-                <Route path='/shotput-discussrule' element={<DiscusThrowShotPut />} /> {/* Shotput & Discuss Throw Rules */}
-                <Route path='/boxcricketrules' element={<BoxCricketRules />} /> {/* Box Cricket Rules */}
-                <Route path='/bgmirules' element={<BGMIEventRules />} /> {/* BGMI Event Rules */}
-                <Route path='/3legracerules' element={<ThreeLegRaceEvent />} /> {/* Three Leg Race Rules */}
-                <Route path='/cricketrules' element={<OpenCricketEventRules />} /> {/* Cricket Rules */}
-                <Route path='/footballrules' element={<FootballEventRules />} /> {/* Football Rules */}
-                <Route path='/pushuprules' element={<PushUpEvent />} /> {/* Push-Up Event Rules */}
-                <Route path='/racerules' element={<RaceEvent />} /> {/* Race Event Rules */}
-                <Route path='/relayrules' element={<RelayRaceEvent />} /> {/* Relay Race Event Rules */}
-                <Route path='/tugofwarrules' element={<TugOfWarEvent />} /> {/* Tug of War Event Rules */}
-                <Route path='/cookingrules' element={<CookingCompetition />} /> {/* Cooking Competition Rules */}
-                <Route path='/debaterules' element={<DebateEvent />} />
-                <Route path='/doodlingrules' element={<DoodlingEvent />} />
-                <Route path='/naatrules' element={<HamdONaatEventRules />} />
-                <Route path='/speechrules' element={<ExtemporeVernacularSpeechEventRules />} />
-                <Route path='/mehendirules' element={<MehendiEventRules />} />
-                <Route path='/lippanrules' element={<LippanArtEventRules />} />
-                <Route path='/mushairarules' element={<MushairaEventRules />} />
-                <Route path='/potpaintingrules' element={<PotPaintingEventRules />} />
-                <Route path='/qiratrules' element={<QiratEventRules />} />
-                <Route path='/rangolirules' element={<RangoliEventRules />} />
-                <Route path='/treasurehuntrules' element={<TreasureHuntEventRules />} />
-                <Route path='/zaikarules' element={<FoodStallZaikaEventRules />} />
-                <Route path='/standuprules' element={<StandUpComedyEventRules />} />
-                
+                <Route path="/extempore" element={<ExtemporeRegistration />} /> {/* Stand-up Comedy Registration */}
+                <Route path='/poster' element={<PosterCompetitionRegistration />} />
+                <Route path='/autocad' element={<AutoCADCompetitionRegistration />} />
+                <Route path='/ppt' element={<PPTRegistration/>} />
 
             </Routes>
 
