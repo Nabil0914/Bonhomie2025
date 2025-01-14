@@ -10,47 +10,52 @@ const Home = () => {
     };
 
     return (
-        <div className="bg-gray-50 text-gray-800 font-sans">
-            <nav className="bg-white shadow-md fixed w-full z-50">
-                <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                    {/* Logo */}
-                    <a href="#" className="text-2xl font-bold text-gray-800">
-                        Bonhomie 2025
-                    </a>
+        <div className="bg-custom-blue text-gray-800 font-sans">
+        <nav className="bg-custom-blue shadow-md fixed w-full z-50">
+    <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        {/* Logo Image */}
+        <a href="#" className="text-2xl font-bold text-white">
+            <img 
+                src="../src/assets/logo.png" 
+                alt="Bonhomie 2025 Logo" 
+                className="h-8 md:h-10" 
+            />
+        </a>
+        {/* Toggle Button for Mobile */}
+        <button
+            onClick={toggleMenu}
+            className="block md:hidden text-gray-600 focus:outline-none"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                />
+            </svg>
+        </button>
 
-                    {/* Toggle Button for Mobile */}
-                    <button
-                        onClick={toggleMenu}
-                        className="block md:hidden text-gray-600 focus:outline-none"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                        </svg>
-                    </button>
+        {/* Links (Responsive Dropdown) */}
+        <div
+            className={`${isMenuOpen ? "block" : "hidden"} md:flex flex-col md:flex-row md:items-center absolute md:relative top-16 md:top-0 left-0 w-full bg-white md:bg-transparent md:w-auto`}
+        >
+            <a href="#hero-section" className="block text-left px-6 py-2 md:py-0 text-white hover:text-blue-600">Home</a>
+            <a href="#logo-section" className="block text-left px-6 py-2 md:py-0 text-white hover:text-blue-600">Logo</a>
+            <a href="#winners-section" className="block text-left px-6 py-2 md:py-0 text-white hover:text-blue-600">Winners</a>
+            <a href="#faculty-section" className="block text-left px-6 py-2 md:py-0 text-white hover:text-blue-600">Faculty</a>
+            <a href="#glimpse-section" className="block text-left px-6 py-2 md:py-0 text-white hover:text-blue-600">Glimpses</a>
+            <a href="#contact-section" className="block text-left px-6 py-2 md:py-0 text-white hover:text-blue-600">Contact</a>
+        </div>
+    </div>
+</nav>
 
-                    {/* Links (Responsive Dropdown) */}
-                    <div
-                        className={`${isMenuOpen ? "block" : "hidden"} md:flex flex-col md:flex-row md:items-center absolute md:relative top-16 md:top-0 left-0 w-full bg-white md:bg-transparent md:w-auto`}>
-                        <a href="#hero-section" className="block text-left px-6 py-2 md:py-0 text-gray-600 hover:text-blue-600">Home</a>
-                        <a href="#logo-section" className="block text-left px-6 py-2 md:py-0 text-gray-600 hover:text-blue-600">Logo</a>
-                        <a href="#winners-section" className="block text-left px-6 py-2 md:py-0 text-gray-600 hover:text-blue-600" >Winners</a>
-                        <a href="#faculty-section" className="block text-left px-6 py-2 md:py-0 text-gray-600 hover:text-blue-600">Faculty</a>
-                        <a href="#glimpse-section" className="block text-left px-6 py-2 md:py-0 text-gray-600 hover:text-blue-600" >Glimpses</a>
-                        <a href="#contact-section" className="block text-left px-6 py-2 md:py-0 text-gray-600 hover:text-blue-600">Contact</a>
-                    </div>
-                </div>
-            </nav>
             {/* Hero Section */}
             <header className="relative min-h-screen flex flex-col justify-center items-center text-white text-center overflow-hidden">
                 {/* Video Background */}
@@ -100,7 +105,7 @@ const SectionLogo = () => {
                 {/* Logo Section */}
                 <div className="w-full md:w-1/2 text-center md:text-left">
                     <img
-                        src="../src/assets/Bonhomie.png"
+                        src="../src/assets/logo.svg"
                         alt="Event Logo"
                         className="mx-auto max-w-s hover:scale-110 transform duration-500"
                     />
