@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const VlogRegistration = () => {
   const [formData, setFormData] = useState({
@@ -8,55 +8,55 @@ const VlogRegistration = () => {
     rollNo: '',
     email: '',
     contactNo: '',
-    eventName: 'Cooking',
+    eventName: 'Vlog',
     eventType: 'both',
     eventCategory: 'individual',
   });
 
   const [message, setMessage] = useState('');   // To store message (success or error)
-  const [messageType, setMessageType] = useState(''); // To track the message type (success or error)
-      
-        const handleChange = (e) => {
-          const { name, value } = e.target;
-          setFormData({ ...formData, [name]: value });
-        };
-      
-        const handleSubmit = async (e) => {
-          e.preventDefault();
-          try {
-            const response = await fetch('http://localhost:3000/individual-sports', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                participantName: formData.participantName,
-                year: formData.year,
-                department: formData.department,
-                rollNo: formData.rollNo,
-                email: formData.email,
-                contactNo: formData.contactNo,
-                eventName: 'Cooking',
-                eventType: 'both',
-                eventCategory: 'individual',
-              }),
-            });
-      
-            const result = await response.json();
-      
-            if (response.ok) {
-              setMessage('Registration successful!');
-              setMessageType('success');
-            } else {
-              setMessage(`Error: ${result.message}`);
+          const [messageType, setMessageType] = useState(''); // To track the message type (success or error)
+        
+          const handleChange = (e) => {
+            const { name, value } = e.target;
+            setFormData({ ...formData, [name]: value });
+          };
+        
+          const handleSubmit = async (e) => {
+            e.preventDefault();
+            try {
+              const response = await fetch('http://localhost:3000/individual-sports', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  participantName: formData.participantName,
+                  year: formData.year,
+                  department: formData.department,
+                  rollNo: formData.rollNo,
+                  email: formData.email,
+                  contactNo: formData.contactNo,
+                  eventName: 'Vlog',
+                  eventType: 'both',
+                  eventCategory: 'individual',
+                }),
+              });
+        
+              const result = await response.json();
+        
+              if (response.ok) {
+                setMessage('Registration successful!');
+                setMessageType('success');
+              } else {
+                setMessage(`Error: ${result.message}`);
+                setMessageType('error');
+              }
+            } catch (error) {
+              setMessage('An error occurred during registration.');
               setMessageType('error');
+              console.error('Error:', error);
             }
-          } catch (error) {
-            setMessage('An error occurred during registration.');
-            setMessageType('error');
-            console.error('Error:', error);
-          }
-        };
+          };
   
 
         return (
