@@ -98,43 +98,51 @@ const CulturalPage = () => {
         <div>
             {/* Navbar */}
             <nav className="bg-blue-600 text-white py-4">
-                <div className="container mx-auto flex justify-between items-center px-4">
-                    <div className="text-2xl font-bold">
-                        <Link to="/" className="text-white">CulturalFest</Link>
-                    </div>
-                    <div className="hidden md:flex space-x-8">
-                        <a href="#culturalEvents" className="hover:text-gray-200">Cultural Events</a>
-                        <a href="#schedule" className="hover:text-gray-200">Event Schedule</a>
-                        <a href="#testimonials" className="hover:text-gray-200">What Participants Say</a>
-                        <a href="#contact" className="hover:text-gray-200">Contact</a>
-                    </div>
-                    <div className="md:hidden">
-                        <button
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="text-white focus:outline-none"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                {isMenuOpen && (
-                    <div className="md:hidden bg-blue-600 text-white py-4">
-                        <div className="flex flex-col items-start space-y-2 ml-4">  {/* Added 'items-start' and 'ml-4' */}
-                            <a href="#culturalEvents" className="py-2">Cultural Events</a>
-                            <a href="#schedule" className="py-2">Event Schedule</a>
-                            <a href="#testimonials" className="py-2">What Participants Say</a>
-                            <a href="#contact" className="py-2">Contact</a>
-                        </div>
-                    </div>
-                )}
-            </nav>
+    <div className="container mx-auto flex justify-between items-center px-4">
+        {/* Replace text with an image */}
+        <div className="text-2xl font-bold">
+            <Link to="/">
+                <img 
+                    src="../src/assets/logo.png" 
+                    alt="CulturalFest Logo" 
+                    className="h-8 md:h-12" 
+                />
+            </Link>
+        </div>
+        <div className="hidden md:flex space-x-8">
+            <a href="#culturalEvents" className="hover:text-gray-200">Cultural Events</a>
+            <a href="#schedule" className="hover:text-gray-200">Event Schedule</a>
+            <a href="#testimonials" className="hover:text-gray-200">What Participants Say</a>
+            <a href="#contact" className="hover:text-gray-200">Contact</a>
+        </div>
+        <div className="md:hidden">
+            <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-white focus:outline-none"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    {isMenuOpen && (
+        <div className="md:hidden bg-blue-600 text-white py-4">
+            <div className="flex flex-col items-start space-y-2 ml-4">
+                <a href="#culturalEvents" className="py-2">Cultural Events</a>
+                <a href="#schedule" className="py-2">Event Schedule</a>
+                <a href="#testimonials" className="py-2">What Participants Say</a>
+                <a href="#contact" className="py-2">Contact</a>
+            </div>
+        </div>
+    )}
+</nav>
+
 
             {/* Cultural Events Section */}
-            <section id="culturalEvents" className="py-16 bg-white">
+            <section id="culturalEvents" className="py-16 bg-bgcolor">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-center text-3xl font-semibold text-gray-800">Cultural Events</h2>
+                    <h2 className="text-center text-3xl font-semibold text-white">Cultural Events</h2>
                     <div className="flex flex-wrap justify-center gap-8 mt-10">
                         {renderCards(culturalEvents)}
                     </div>
@@ -150,7 +158,7 @@ const CulturalPage = () => {
             </section> */}
 
             {/* Testimonials Section */}
-            <section id="testimonials" className="py-16 bg-white">
+            <section id="testimonials" className="py-16 bg-bgcolor">
     <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-semibold text-gray-800">What Participants Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
@@ -169,9 +177,6 @@ const CulturalPage = () => {
         </div>
     </div>
 </section>
-
-
-
             {/* Contact Section */}
             <section id="contact" className="py-16 bg-blue-600 text-white">
                 <div className="container mx-auto px-4 text-center">
@@ -199,7 +204,7 @@ const CulturalPage = () => {
                         ></textarea>
                         <button
                             type="submit"
-                            className="w-full py-3 bg-white text-blue-600 font-semibold rounded-md hover:bg-gray-200"
+                            className="w-full py-3 bg-bgcolor text-blue-600 font-semibold rounded-md hover:bg-gray-200"
                         >
                             Send Message
                         </button>

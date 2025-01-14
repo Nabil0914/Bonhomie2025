@@ -299,7 +299,7 @@ const VolleyballRegistration = () => {
 
                 {/* Submit Button */}
                 <div className="text-center mt-6">
-                    <button type="submit" className="btn bg-indigo-600 text-white py-2 px-6 rounded-md hover:bg-indigo-700">
+                    <button type="submit" className="btn bg-bgcolor text-white py-2 px-6 rounded-md hover:bg-indigo-700">
                         Register
                     </button>
                 </div>

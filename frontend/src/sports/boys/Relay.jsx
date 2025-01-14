@@ -228,7 +228,7 @@ const RelayRegistration = () => {
                 <div className="text-center mt-8">
                     <button
                         type="submit"
-                        className="btn bg-gradient-to-r from-orange-400 to-indigo-600 text-white px-8 py-2 rounded-lg hover:scale-105 transition-all"
+                        className="btn bg-bgcolor text-white px-8 py-2 rounded-lg hover:scale-105 transition-all"
                     >
                         Register
                     </button>

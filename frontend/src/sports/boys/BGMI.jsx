@@ -109,7 +109,7 @@ const BGMIRegistrationForm = () => {
         return (
             <div className="container mx-auto mt-12 p-6 bg-white rounded-lg shadow-lg max-w-3xl">
                 <h2 className="text-center text-orange-500 font-bold text-xl mb-4">
-                    Boys Cricket Registration Form
+                    BGMI Registration Form
                 </h2>
     
                 {/* Alert Message */}

@@ -59,7 +59,7 @@ const CarromRegistration = () => {
         };
 
         return (
-          <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-orange-500 to-indigo-600">
+          <div className="min-h-screen flex items-center justify-center bg-bgcolor">
             <div className="w-full max-w-lg bg-white rounded-lg shadow-lg p-8">
               <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
                 Boys Carrom Registration Form
@@ -189,7 +189,7 @@ const CarromRegistration = () => {
                 <div className="text-center">
                   <button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-orange-500 to-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:opacity-90 transition"
+                    className="w-full bg-bgcolor text-white font-semibold py-2 px-4 rounded-lg hover:opacity-90 transition"
                   >
                     Register Now
                   </button>

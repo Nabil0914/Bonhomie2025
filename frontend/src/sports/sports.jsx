@@ -38,7 +38,7 @@ const EventPage = () => {
             { imgSrc: "../src/assets/chess.png", title: "Chess", to: "/boyschess" },
             { imgSrc: "../src/assets/carrom.png", title: "Carrom", to: "/boyscarrom" },
             { imgSrc: "../src/assets/running.png", title: "Race 100m", to: "/boysrunning" },
-            { imgSrc: "../src/assets/discussthrow.png", title: "Discuss Throw", to: "/boysdiscuss" },
+            { imgSrc: "../src/assets/discussthrow.png", title: "Discus Throw", to: "/boysdiscuss" },
             { imgSrc: "../src/assets/shotput.jpeg", title: "Shot Put", to: "/boysshotput" },
             { imgSrc: "../src/assets/badminton.png", title: "Badminton", to: "/boysbadminton" },
             { imgSrc: "../src/assets/tabletennis.png", title: "Table Tennis", to: "/boystabletennis" },
@@ -62,7 +62,7 @@ const EventPage = () => {
             { imgSrc: "../src/assets/badminton.png", title: "Badminton", to: "/girlsbadminton" },
             { imgSrc: "../src/assets/running.png", title: "Race 100m", to: "/girlsrunning" },
             { imgSrc: "../src/assets/shotput.jpeg", title: "Shot Put", to: "/girlsshotput" },
-            { imgSrc: "../src/assets/discussthrow.png", title: "Discuss Throw", to: "/girlsdiscuss" },
+            { imgSrc: "../src/assets/discussthrow.png", title: "Discus Throw", to: "/girlsdiscuss" },
             { imgSrc: "../src/assets/armwrestling.png", title: "Arm Wrestling", to: "/girlsarmwrestling" },
         ];
         
@@ -117,41 +117,47 @@ const EventPage = () => {
 
     return (
         
-        <div>
+        <div className="bg-bgcolor">
             <nav className="bg-blue-600 text-white py-4">
-                            <div className="container mx-auto flex justify-between items-center px-4">
-                                <div className="text-2xl font-bold">
-                                    <Link to="/" className="text-white">SportsFest</Link>
-                                </div>
-                                <div className="hidden md:flex space-x-8">
-                                    <a href="#sports" className="hover:text-gray-200">Sports Events</a>
-                                    <a href="#schedule" className="hover:text-gray-200">Event Schedule</a>
-                                    <a href="#testimonials" className="hover:text-gray-200">What Participants Say</a>
-                                    <a href="#contact" className="hover:text-gray-200">Contact</a>
-                                </div>
-                                <div className="md:hidden">
-                                    <button
-                                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                        className="text-white focus:outline-none"
-                                    >
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            {isMenuOpen && (
-                                <div className="md:hidden bg-blue-600 text-white py-4">
-                                    <div className="flex flex-col items-start space-y-2 ml-4">  {/* Added 'items-start' and 'ml-4' */}
-                                        <a href="#culturalEvents" className="py-2">Sports Events</a>
-                                        <a href="#schedule" className="py-2">Event Schedule</a>
-                                        <a href="#testimonials" className="py-2">What Participants Say</a>
-                                        <a href="#contact" className="py-2">Contact</a>
-                                    </div>
-                                </div>
-                            )}
-            
-                        </nav>
+    <div className="container mx-auto flex justify-between items-center px-4">
+        <div className="text-2xl font-bold">
+            <Link to="/">
+                <img 
+                    src="../src/assets/logo.png" 
+                    alt="SportsFest Logo" 
+                    className="h-8 md:h-12" 
+                />
+            </Link>
+        </div>
+        <div className="hidden md:flex space-x-8">
+            <a href="#sports" className="hover:text-gray-200">Sports Events</a>
+            <a href="#schedule" className="hover:text-gray-200">Event Schedule</a>
+            <a href="#testimonials" className="hover:text-gray-200">What Participants Say</a>
+            <a href="#contact" className="hover:text-gray-200">Contact</a>
+        </div>
+        <div className="md:hidden">
+            <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-white focus:outline-none"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    {isMenuOpen && (
+        <div className="md:hidden bg-blue-600 text-white py-4">
+            <div className="flex flex-col items-start space-y-2 ml-4">
+                <a href="#sports" className="py-2">Sports Events</a>
+                <a href="#schedule" className="py-2">Event Schedule</a>
+                <a href="#testimonials" className="py-2">What Participants Say</a>
+                <a href="#contact" className="py-2">Contact</a>
+            </div>
+        </div>
+    )}
+</nav>
+
             {/* Button Section */}
             <div id="sports" className="flex justify-center flex-wrap p-6 gap-6">
                 <button
@@ -186,9 +192,9 @@ const EventPage = () => {
             <div>
                 {/* Boys Individual Sports */}
                 {selectedCategory === "boysIndividual" && (
-                    <section id="boysIndividualSports" className="py-16 bg-white">
+                    <section id="boysIndividualSports" className="py-16 bg-bgcolor">
                         <div className="container mx-auto px-4">
-                            <h2 className="text-center text-3xl font-semibold text-gray-800">
+                            <h2 className="text-center text-3xl font-semibold text-white">
                                 Boys Individual Sports Events
                             </h2>
                             <div className="flex flex-wrap justify-center gap-6 mt-10">
@@ -200,9 +206,9 @@ const EventPage = () => {
 
                 {/* Boys Group Sports */}
                 {selectedCategory === "boysGroup" && (
-                    <section id="boysGroupSports" className="py-16 bg-white">
+                    <section id="boysGroupSports" className="py-16 bg-bgcolor">
                         <div className="container mx-auto px-4">
-                            <h2 className="text-center text-3xl font-semibold text-gray-800">
+                            <h2 className="text-center text-3xl font-semibold text-white">
                                 Boys Group Sports Events
                             </h2>
                             <div className="flex flex-wrap justify-center gap-6 mt-10">
@@ -214,9 +220,9 @@ const EventPage = () => {
 
                 {/* Girls Individual Sports */}
                 {selectedCategory === "girlsIndividual" && (
-                    <section id="girlsIndividualSports" className="py-16 bg-white">
+                    <section id="girlsIndividualSports" className="py-16 bg-bgcolor">
                         <div className="container mx-auto px-4">
-                            <h2 className="text-center text-3xl font-semibold text-gray-800">
+                            <h2 className="text-center text-3xl font-semibold text-white">
                                 Girls Individual Sports Events
                             </h2>
                             <div className="flex flex-wrap justify-center gap-6 mt-10">
@@ -228,9 +234,9 @@ const EventPage = () => {
 
                 {/* Girls Group Sports */}
                 {selectedCategory === "girlsGroup" && (
-                    <section id="girlsGroupSports" className="py-16 bg-white">
+                    <section id="girlsGroupSports" className="py-16 bg-bgcolor">
                         <div className="container mx-auto px-4">
-                            <h2 className="text-center text-3xl font-semibold text-gray-800">
+                            <h2 className="text-center text-3xl font-semibold text-white">
                                 Girls Group Sports Events
                             </h2>
                             <div className="flex flex-wrap justify-center gap-6 mt-10">
@@ -249,7 +255,7 @@ const EventPage = () => {
                 </div>
             </section> */}
 
-<section id="testimonials" className="py-16 bg-white">
+<section id="testimonials" className="py-16 bg-bgcolor">
     <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-semibold text-gray-800">What Participants Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
@@ -295,7 +301,7 @@ const EventPage = () => {
                         ></textarea>
                         <button
                             type="submit"
-                            className="w-full py-3 bg-white text-blue-600 font-semibold rounded-md hover:bg-gray-200"
+                            className="w-full py-3 bg-bgcolor text-blue-600 font-semibold rounded-md hover:bg-gray-200"
                         >
                             Send Message
                         </button>
