@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const AutoCADCompetitionRegistration = () => {
+const VlogRegistration = () => {
   const [formData, setFormData] = useState({
     participantName: '',
     year: '',
@@ -8,13 +8,13 @@ const AutoCADCompetitionRegistration = () => {
     rollNo: '',
     email: '',
     contactNo: '',
-    eventName: 'AutoCAD',
+    eventName: 'Cooking',
     eventType: 'both',
     eventCategory: 'individual',
   });
 
   const [message, setMessage] = useState('');   // To store message (success or error)
-        const [messageType, setMessageType] = useState(''); // To track the message type (success or error)
+  const [messageType, setMessageType] = useState(''); // To track the message type (success or error)
       
         const handleChange = (e) => {
           const { name, value } = e.target;
@@ -36,7 +36,7 @@ const AutoCADCompetitionRegistration = () => {
                 rollNo: formData.rollNo,
                 email: formData.email,
                 contactNo: formData.contactNo,
-                eventName: 'AutoCAD',
+                eventName: 'Cooking',
                 eventType: 'both',
                 eventCategory: 'individual',
               }),
@@ -57,12 +57,13 @@ const AutoCADCompetitionRegistration = () => {
             console.error('Error:', error);
           }
         };
+  
 
         return (
           <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-orange-500 to-indigo-600">
             <div className="w-full max-w-lg bg-white rounded-lg shadow-lg p-8">
               <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-                AutoCAD Registration Form
+                VLOG Competition Registration Form
               </h2>
       
               {/* Conditionally Render Success or Error Alert */}
@@ -107,13 +108,13 @@ const AutoCADCompetitionRegistration = () => {
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200"
                   >
                     <option value="">Select Year</option>
-                    <option value="FE">FE</option>
-                    <option value="SE">SE</option>
-                    <option value="TE">TE</option>
-                    <option value="BE">BE</option>
+                    <option value="FE">First Year</option>
+                    <option value="SE">Second Year</option>
+                    <option value="TE">Third Year</option>
+                    <option value="BE">Fourth Year</option>
+                    <option value="BE">Fifth Year</option>
                   </select>
                 </div>
-      
                 {/* Department */}
                 <div>
                   <label htmlFor="department" className="block text-sm font-medium text-gray-700 mb-1">Department</label>
@@ -129,6 +130,8 @@ const AutoCADCompetitionRegistration = () => {
                     <option value="CO">CO</option>
                     <option value="AIML">AIML</option>
                     <option value="DS">DS</option>
+                    <option value="DS">Bsc IT</option>
+                    <option value="DS">Bsc IT</option>
                     <option value="CIVIL">CIVIL</option>
                     <option value="ME">ME</option>
                     <option value="ELECTRICAL">ELECTRICAL</option>
@@ -198,4 +201,4 @@ const AutoCADCompetitionRegistration = () => {
         );
       };
 
-export default AutoCADCompetitionRegistration;
+export default VlogRegistration;

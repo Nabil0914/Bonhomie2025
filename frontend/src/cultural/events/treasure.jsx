@@ -80,6 +80,7 @@ const TreasureHuntRegistration = () => {
             <option value="CO">CO</option>
             <option value="AIML">AIML</option>
             <option value="DS">DS</option>
+            <option value="DS">Bsc IT</option>
             <option value="CIVIL">CIVIL</option>
             <option value="ME">ME</option>
             <option value="ELECTRICAL">ELECTRICAL</option>
@@ -100,11 +101,12 @@ const TreasureHuntRegistration = () => {
             onChange={(e) => setYear(e.target.value)}
             required
           >
-            <option value="">Select Year</option>
-            <option value="FE">FE</option>
-            <option value="SE">SE</option>
-            <option value="TE">TE</option>
-            <option value="BE">BE</option>
+                    <option value="">Select Year</option>
+                    <option value="FE">First Year</option>
+                    <option value="SE">Second Year</option>
+                    <option value="TE">Third Year</option>
+                    <option value="BE">Fourth Year</option>
+                    <option value="BE">Fifth Year</option>
           </select>
         </div>
 

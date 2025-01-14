@@ -33,7 +33,6 @@ import GirlsShotputRegistration from './sports/girls/Shotput';
 import GirlsRunningRaceRegistration from './sports/girls/Race';
 import GirlsDiscussThrowRegistration from './sports/girls/DisscussThrow';
 import GirlsVolleyballRegistration from './sports/girls/Volleyball.jsx';
-import GirlsTugOfWarRegistration from './sports/girls/Tugofwar.jsx';
 import GirlsThreeLegRaceRegistration from './sports/girls/Threelegrace.jsx';
 import GirlsThrowBallRegistration from './sports/girls/Throwball.jsx';
 import GirlsArmwrestlingRegistration from './sports/girls/Armwrestling.jsx';
@@ -55,10 +54,7 @@ import TreasureHuntRegistration from './cultural/events/treasure';
 import ZaikaRegistration from './cultural/events/zaika';
 import StandupComedyRegistrationForm from './cultural/events/standup';
 import ExtemporeRegistration from './cultural/events/extempore.jsx';
-
-import AutoCADCompetitionRegistration from './technical/autocad.jsx';
-import PosterCompetitionRegistration from './technical/poster.jsx';
-import PPTRegistration from './technical/ppt.jsx';
+import VlogRegistration from './cultural/events/vlog.jsx';
 const App = () => {
     return (
         <div>
@@ -99,7 +95,6 @@ const App = () => {
                 <Route path="/girlsrunning" element={<GirlsRunningRaceRegistration />} /> {/* Girls' Running Race Registration */}
                 <Route path="/girlsdiscuss" element={<GirlsDiscussThrowRegistration />} /> {/* Girls' Discuss Throw Registration */}
                 <Route path="/girlsvolleyball" element={<GirlsVolleyballRegistration/>} /> 
-                <Route path="/girlstugofwar" element={<GirlsTugOfWarRegistration />} /> 
                 <Route path="/girlsthreelegrace" element={<GirlsThreeLegRaceRegistration/>} /> 
                 <Route path="/girlsthrowball" element={<GirlsThrowBallRegistration />} />
                 <Route path="/girlsarmwrestling" element={<GirlsArmwrestlingRegistration />} />
@@ -122,9 +117,8 @@ const App = () => {
                 <Route path="/zaika" element={<ZaikaRegistration />} /> {/* Zaika Food Stall Registration */}
                 <Route path="/standup" element={<StandupComedyRegistrationForm />} /> {/* Stand-up Comedy Registration */}
                 <Route path="/extempore" element={<ExtemporeRegistration />} /> {/* Stand-up Comedy Registration */}
-                <Route path='/poster' element={<PosterCompetitionRegistration />} />
-                <Route path='/autocad' element={<AutoCADCompetitionRegistration />} />
-                <Route path='/ppt' element={<PPTRegistration/>} />
+                <Route path="/vlog" element={<VlogRegistration />} /> {/* Stand-up Comedy Registration */}
+                
 
             </Routes>
 
