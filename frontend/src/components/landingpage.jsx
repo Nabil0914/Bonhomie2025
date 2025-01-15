@@ -173,10 +173,10 @@ const BonhomieEvent = () => {
                     </div>
                 </div>
             </section>
-            {/* Bonhomie 2019 Section */}
+            {/* Bonhomie 2020 Section */}
             <section className="flex flex-col-reverse md:flex-row items-center md:space-x-8 my-12 bg-white rounded-lg shadow-lg p-8">
                 <div className="w-full md:w-5/12 mt-6 md:mt-0 text-center md:text-left space-y-6">
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-indigo-600">Bonhomie 2019 Highlights</h2>
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-indigo-600">Bonhomie 2020 Highlights</h2>
                     <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                         Relive the moments from <span className="font-bold">Bonhomie 2019</span>, where the energy was high, and the performances were off the charts. Watch the best moments of the festival unfold on screen!
                     </p>
@@ -193,19 +193,19 @@ const BonhomieEvent = () => {
                         <iframe
                             className="absolute top-0 left-0 w-full h-full rounded-lg"
                             src="https://www.youtube.com/embed/BchAr1ZcIJE?si=I9CGKZm89jz3sq9k"
-                            title="Bonhomie 2019 Highlights"
+                            title="Bonhomie 2020 Highlights"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                         ></iframe>
                     </div>
                 </div>
             </section>
-            {/* Bonhomie 2018 Section */}
+            {/* Bonhomie 2019 Section */}
             <section className="flex flex-col-reverse md:flex-row items-center md:space-x-8 my-12 bg-white rounded-lg shadow-lg p-8">
                 <div className="w-full md:w-5/12 mt-6 md:mt-0 text-center md:text-left space-y-6">
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-indigo-600">Bonhomie 2018 Highlights</h2>
                     <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                        Take a trip down memory lane and watch the incredible moments from <span className="font-bold">Bonhomie 2018</span>! This video showcases the most thrilling competitions and artistic performances of that year.
+                        Take a trip down memory lane and watch the incredible moments from <span className="font-bold">Bonhomie 2019</span>! This video showcases the most thrilling competitions and artistic performances of that year.
                     </p>
                     <a
                         href="https://www.youtube.com/embed/t0bm5cGCHM4?si=OxWOT43bUtOYvqoE"
@@ -220,6 +220,33 @@ const BonhomieEvent = () => {
                         <iframe
                             className="absolute top-0 left-0 w-full h-full rounded-lg"
                             src="https://www.youtube.com/embed/t0bm5cGCHM4?si=OxWOT43bUtOYvqoE"
+                            title="Bonhomie 2019 Highlights"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                </div>
+            </section>
+            {/* Bonhomie 2018 Section */}
+            <section className="flex flex-col-reverse md:flex-row items-center md:space-x-8 my-12 bg-white rounded-lg shadow-lg p-8">
+                <div className="w-full md:w-5/12 mt-6 md:mt-0 text-center md:text-left space-y-6">
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-indigo-600">Bonhomie 2018 Highlights</h2>
+                    <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+                        Watch the exciting highlights from the <span className="font-bold">Bonhomie 2018</span> sports and cultural fest! Enjoy electrifying performances, intense competitions, and moments that made this year unforgettable.
+                    </p>
+                    <a
+                        href="https://www.youtube.com/watch?v=55GX9ODHhYM"
+                        target="_blank"
+                        className="inline-block px-6 py-2 text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg shadow-md transition ease-in-out duration-300"
+                    >
+                        View Highlights
+                    </a>
+                </div>
+                <div className="w-full md:w-7/12 rounded-lg overflow-hidden shadow-lg">
+                    <div className="relative pb-[56.25%] h-0">
+                        <iframe
+                            className="absolute top-0 left-0 w-full h-full rounded-lg"
+                            src="https://www.youtube.com/embed/EcGkj8w4J1M?si=2IpxHBNfObaz23nZ"
                             title="Bonhomie 2018 Highlights"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -227,6 +254,7 @@ const BonhomieEvent = () => {
                     </div>
                 </div>
             </section>
+            
         </div>
     );
 };
@@ -239,22 +267,22 @@ const SectionWinners = () => (
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <WinnerCard
-                imgSrc="https://via.placeholder.com/400x250"
+                imgSrc="../src/assets/glimpse1.jpg"
                 district="District A"
                 winner="Team Falcons"
-                description="The champions of the district football tournament, showcasing unmatched teamwork and strategy."
+                description="Spike, serve, and score—it's game time on the volleyball court!"
             />
             <WinnerCard
-                imgSrc="https://via.placeholder.com/400x250"
+                imgSrc="../src/assets/glimpse2.jpg"
                 district="District B"
                 winner="Cricket Kings"
-                description="The cricket champions who ruled the district championship with their incredible skills and determination."
+                description="Get a sneak peek into the action with BGMI Glimpse"
             />
             <WinnerCard
-                imgSrc="https://via.placeholder.com/400x250"
+                imgSrc="../src/assets/glimpse3.jpg"
                 district="District C"
                 winner="Tennis Titans"
-                description="The table tennis masters who dominated the competition with their precision and speed."
+                description="Battle of flavors: Where creativity meets competition in the ultimate cooking showdown!"
             />
         </div>
     </section>
