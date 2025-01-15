@@ -50,7 +50,7 @@ const EventPage = () => {
             { imgSrc: "../src/assets/boxcricket.png", title: "Box Cricket", to: "/boysboxcricket" },
             { imgSrc: "../src/assets/football.png", title: "Football", to: "/boysfootball" },
             { imgSrc: "../src/assets/volleyball.png", title: "VolleyBall", to: "/boysvolleyball" },
-            { imgSrc: "../src/assets/relay.png", title: "Relay Race", to: "/boysrelay" },
+            // { imgSrc: "../src/assets/relay.png", title: "Relay Race", to: "/boysrelay" },
             { imgSrc: "../src/assets/BGMI.webp", title: "BGMI", to: "/boysBGMI" },
             
             
@@ -194,7 +194,7 @@ const EventPage = () => {
                 {selectedCategory === "boysIndividual" && (
                     <section id="boysIndividualSports" className="py-16 bg-bgcolor">
                         <div className="container mx-auto px-4">
-                            <h2 className="text-center text-3xl font-semibold text-white">
+                            <h2 className="text-center text-3xl font-semibold text-black">
                                 Boys Individual Sports Events
                             </h2>
                             <div className="flex flex-wrap justify-center gap-6 mt-10">
@@ -208,7 +208,7 @@ const EventPage = () => {
                 {selectedCategory === "boysGroup" && (
                     <section id="boysGroupSports" className="py-16 bg-bgcolor">
                         <div className="container mx-auto px-4">
-                            <h2 className="text-center text-3xl font-semibold text-white">
+                            <h2 className="text-center text-3xl font-semibold text-black">
                                 Boys Group Sports Events
                             </h2>
                             <div className="flex flex-wrap justify-center gap-6 mt-10">
@@ -222,7 +222,7 @@ const EventPage = () => {
                 {selectedCategory === "girlsIndividual" && (
                     <section id="girlsIndividualSports" className="py-16 bg-bgcolor">
                         <div className="container mx-auto px-4">
-                            <h2 className="text-center text-3xl font-semibold text-white">
+                            <h2 className="text-center text-3xl font-semibold text-black">
                                 Girls Individual Sports Events
                             </h2>
                             <div className="flex flex-wrap justify-center gap-6 mt-10">
@@ -236,7 +236,7 @@ const EventPage = () => {
                 {selectedCategory === "girlsGroup" && (
                     <section id="girlsGroupSports" className="py-16 bg-bgcolor">
                         <div className="container mx-auto px-4">
-                            <h2 className="text-center text-3xl font-semibold text-white">
+                            <h2 className="text-center text-3xl font-semibold text-black">
                                 Girls Group Sports Events
                             </h2>
                             <div className="flex flex-wrap justify-center gap-6 mt-10">

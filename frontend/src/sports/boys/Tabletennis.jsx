@@ -8,8 +8,8 @@ const TabletennisRegistration = () => {
         rollNo: '',
         email: '',
         contactNo: '',
-        eventName: 'Armwrestling',
-        eventType: 'both',
+        eventName: 'Table Tennis',
+        eventType: 'boys',
         eventCategory: 'individual',
     });
 
@@ -36,8 +36,8 @@ const TabletennisRegistration = () => {
                     rollNo: formData.rollNo,
                     email: formData.email,
                     contactNo: formData.contactNo,
-                    eventName: 'Armwrestling',
-                    eventType: 'both',
+                    eventName: 'Table Tennis',
+                    eventType: 'boys',
                     eventCategory: 'individual',
                 }),
             });
@@ -129,7 +129,7 @@ const TabletennisRegistration = () => {
                             <option value="CO">CO</option>
                             <option value="AIML">AIML</option>
                             <option value="DS">DS</option>
-                            <option value="DS">Bsc IT</option>
+                            <option value="Bsc IT">Bsc IT</option>
                             <option value="CIVIL">CIVIL</option>
                             <option value="ME">ME</option>
                             <option value="ELECTRICAL">ELECTRICAL</option>
@@ -188,7 +188,7 @@ const TabletennisRegistration = () => {
                     <div className="text-center">
                         <button
                             type="submit"
-                            className="w-full bg-bgcolor text-white font-semibold py-2 px-4 rounded-lg hover:opacity-90 transition"
+                            className="w-full bg-custom-blue text-white font-semibold py-2 px-4 rounded-lg hover:opacity-90 transition"
                         >
                             Register Now
                         </button>

@@ -6,11 +6,12 @@ import Home from './components/landingpage';
 import Footer from './components/footer';
 import EventPage from './sports/sports';
 import CulturalPage from './cultural/cultural';
+import TechnicalPage from './technical/technical.jsx';
 
 // Importing registration components for boys' sports events
 import BoxCricketRegistration from './sports/boys/BoxCricket';
 import FootballRegistration from './sports/boys/Football';
-import RelayRegistration from './sports/boys/Relay';
+// import RelayRegistration from './sports/boys/Relay';
 import BadmintonRegistration from './sports/boys/Badminton';
 import ChessRegistration from './sports/boys/Chess';
 import DiscussThrowRegistration from './sports/boys/DisscussThrow';
@@ -55,6 +56,10 @@ import ZaikaRegistration from './cultural/events/zaika';
 import StandupComedyRegistrationForm from './cultural/events/standup';
 import ExtemporeRegistration from './cultural/events/extempore.jsx';
 import VlogRegistration from './cultural/events/vlog.jsx';
+
+// import PPTRegistration from './technical/events/ppt.jsx';
+import PosterRegistration from './technical/events/poster.jsx';
+import AutoCadRegistration from './technical/events/autocad.jsx';
 const App = () => {
     return (
         <div>
@@ -69,9 +74,12 @@ const App = () => {
                 {/* Route for cultural events page */}
                 <Route path="/cultural" element={<CulturalPage />} />
 
+                {/* Route for technical events page */}
+                <Route path="/technical" element={<TechnicalPage />} />
+
                 {/* Routes for boys' sports events */}
                 <Route path="/boysboxcricket" element={<BoxCricketRegistration />} /> {/* Boys' Box Cricket Registration */}
-                <Route path="/boysrelay" element={<RelayRegistration />} /> {/* Boys' Relay Registration */}
+                {/* <Route path="/boysrelay" element={<RelayRegistration />} /> Boys' Relay Registration */}
                 <Route path="/boysfootball" element={<FootballRegistration />} /> {/* Boys' Football Registration */}
                 <Route path="/boysbadminton" element={<BadmintonRegistration />} /> {/* Boys' Badminton Registration */}
                 <Route path="/boyschess" element={<ChessRegistration />} /> {/* Boys' Chess Registration */}
@@ -118,8 +126,11 @@ const App = () => {
                 <Route path="/standup" element={<StandupComedyRegistrationForm />} /> {/* Stand-up Comedy Registration */}
                 <Route path="/extempore" element={<ExtemporeRegistration />} /> {/* Stand-up Comedy Registration */}
                 <Route path="/vlog" element={<VlogRegistration />} /> {/* Stand-up Comedy Registration */}
+                <Route path="/autocad" element={<AutoCadRegistration />} /> {/* Stand-up Comedy Registration */}
+                <Route path="/poster" element={<PosterRegistration/>} /> {/* Stand-up Comedy Registration */}
+                {/* <Route path="/ppt" element={<PPTRegistration />} /> Stand-up Comedy Registration */}
                 
-
+                
             </Routes>
 
             {/* Footer */}

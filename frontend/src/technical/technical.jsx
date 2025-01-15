@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const CulturalPage = () => {
+const TechnicalPage = () => {
     const [formStatus, setFormStatus] = useState('');
     const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
@@ -36,22 +36,10 @@ const CulturalPage = () => {
             };
 
             const culturalEvents = [
-                { imgSrc: "../src/assets/mehendi.jpg", title: "Mehndi", to: "/mehndi" },
-                { imgSrc: "../src/assets/rangoli.png", title: "Rangoli", to: "/rangoli" },
-                { imgSrc: "../src/assets/speech.png", title: "Vernacular Speech", to: "/speech" },
-                { imgSrc: "../src/assets/lippan.jpeg", title: "Lippan Art", to: "/lippan" },
-                { imgSrc: "../src/assets/doodle.png", title: "Doodling", to: "/doodling" },
-                { imgSrc: "../src/assets/cooking.jpeg", title: "Cooking Competition", to: "/cooking" },
-                { imgSrc: "../src/assets/qirat.png", title: "Qirat", to: "/qirat"},
-                { imgSrc: "../src/assets/treasure.jpeg", title: "Treasure Hunt", to: "/treasure" },
-                { imgSrc: "../src/assets/standup.png", title: "Stand-Up Comedy", to: "/standup" },
-                { imgSrc: "../src/assets/naat.png", title: "Hamd-o-Naat", to: "/naat" },
-                { imgSrc: "../src/assets/mushaira.jpeg", title: "Mushaira", to: "/mushaira" },
-                { imgSrc: "../src/assets/pot.jpeg", title: "Pot Painting", to: "/potpainting" },
-                { imgSrc: "../src/assets/debate.png", title: "Debate", to: "/debate" },
-                { imgSrc: "../src/assets/zaika.jpeg", title: "Zaika", to: "/zaika" },
-                { imgSrc: "../src/assets/extempore.png", title: "Extempore", to: "/extempore" },
-                { imgSrc: "../src/assets/vlog.png", title: "Vlog", to: "/vlog" },
+                { imgSrc: "../src/assets/autocad.png", title: "AutoCAD", to: "/autocad" },
+                // { imgSrc: "../src/assets/ppt.png", title: "PPT Competition", to: "/ppt" },
+                { imgSrc: "../src/assets/poster.png", title: "Poster Competition", to: "/poster" },
+                
             ];
     // const eventSchedule = [
     //     { time: "9:00 AM", title: "Opening Ceremony", description: "Ceremonial march and special performances.", venue: "Main Stage" },
@@ -110,7 +98,7 @@ const CulturalPage = () => {
             </Link>
         </div>
         <div className="hidden md:flex space-x-8">
-            <a href="#culturalEvents" className="hover:text-gray-200">Cultural Events</a>
+            <a href="#culturalEvents" className="hover:text-gray-200">Technical Events</a>
             <a href="#schedule" className="hover:text-gray-200">Event Schedule</a>
             <a href="#testimonials" className="hover:text-gray-200">What Participants Say</a>
             <a href="#contact" className="hover:text-gray-200">Contact</a>
@@ -142,7 +130,7 @@ const CulturalPage = () => {
             {/* Cultural Events Section */}
             <section id="culturalEvents" className="py-16 bg-bgcolor">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-center text-3xl font-semibold text-black">Cultural Events</h2>
+                    <h2 className="text-center text-3xl font-semibold text-black">Technical Events</h2>
                     <div className="flex flex-wrap justify-center gap-8 mt-10">
                         {renderCards(culturalEvents)}
                     </div>
@@ -163,20 +151,21 @@ const CulturalPage = () => {
         <h2 className="text-3xl font-semibold text-gray-800">What Participants Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             <div className="bg-gray-100 p-6 rounded-lg shadow-lg max-w-md">
-                <p className="text-lg text-gray-600">"The cultural event was mesmerizing! Every performance was a testament to the talent and creativity of our college."</p>
-                <h4 className="text-xl font-bold text-gray-800 mt-4">- Saniya Chandiwala, SOET</h4>
+                <p className="text-lg text-gray-600">"The technical workshops were incredibly informative. I gained hands-on experience with the latest tools and technologies."</p>
+                <h4 className="text-xl font-bold text-gray-800 mt-4">- Rohan Mehta, Computer Science</h4>
             </div>
             <div className="bg-gray-100 p-6 rounded-lg shadow-lg max-w-md">
-                <p className="text-lg text-gray-600">"From the decorations to the performances, everything about the cultural event was extraordinary. A truly memorable experience!"</p>
-                <h4 className="text-xl font-bold text-gray-800 mt-4">- Rida Dhamaskar, Pharmacy</h4>
+                <p className="text-lg text-gray-600">"Participating in the hackathon was a challenging yet rewarding experience. It pushed my problem-solving skills to the next level."</p>
+                <h4 className="text-xl font-bold text-gray-800 mt-4">- Afreen Khan, Electronics Engineering</h4>
             </div>
             <div className="bg-gray-100 p-6 rounded-lg shadow-lg max-w-md">
-                <p className="text-lg text-gray-600">"Being part of the cultural event was an absolute joy. The vibrant atmosphere and the energy of the crowd were unmatched."</p>
-                <h4 className="text-xl font-bold text-gray-800 mt-4">- Amaan Shaikh, Architecture</h4>
+                <p className="text-lg text-gray-600">"The technical events were well-organized, and the competitive atmosphere was electrifying. A fantastic opportunity to showcase my skills."</p>
+                <h4 className="text-xl font-bold text-gray-800 mt-4">- Junaid Mulla, Information Technology</h4>
             </div>
         </div>
     </div>
 </section>
+
             {/* Contact Section */}
             <section id="contact" className="py-16 bg-blue-600 text-white">
                 <div className="container mx-auto px-4 text-center">
@@ -215,4 +204,4 @@ const CulturalPage = () => {
     );
 };
 
-export default CulturalPage;
+export default TechnicalPage;

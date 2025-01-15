@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ChessRegistration = () => {
+const PosterRegistration = () => {
     const [formData, setFormData] = useState({
     participantName: '',
     year: '',
@@ -8,8 +8,8 @@ const ChessRegistration = () => {
     rollNo: '',
     email: '',
     contactNo: '',
-    eventName: 'Chess',
-    eventType: 'boys',
+    eventName: 'Poster',
+    eventType: 'both',
     eventCategory: 'individual',
     });
     
@@ -36,8 +36,8 @@ const ChessRegistration = () => {
               rollNo: formData.rollNo,
               email: formData.email,
               contactNo: formData.contactNo,
-              eventName: 'Chess',
-              eventType: 'boys',
+              eventName: 'Poster',
+              eventType: 'both',
               eventCategory: 'individual',
             }),
           });
@@ -62,7 +62,7 @@ const ChessRegistration = () => {
         <div className="min-h-screen flex items-center justify-center bg-bgcolor">
           <div className="w-full max-w-lg bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-              Boys Chess Registration Form
+              Poster Competition Registration Form
             </h2>
     
             {/* Conditionally Render Success or Error Alert */}
@@ -200,4 +200,4 @@ const ChessRegistration = () => {
       );
     };
 
-export default ChessRegistration;
+export default PosterRegistration;

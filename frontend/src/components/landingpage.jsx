@@ -10,7 +10,7 @@ const Home = () => {
     };
 
     return (
-        <div className="bg-custom-blue text-gray-800 font-sans">
+        <div className="bg-white text-gray-800 font-sans">
         <nav className="bg-custom-blue shadow-md fixed w-full z-50">
     <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo Image */}
@@ -105,7 +105,7 @@ const SectionLogo = () => {
                 {/* Logo Section */}
                 <div className="w-full md:w-1/2 text-center md:text-left">
                     <img
-                        src="../src/assets/logo.svg"
+                        src="../src/assets/Bonhomie.png"
                         alt="Event Logo"
                         className="mx-auto max-w-s hover:scale-110 transform duration-500"
                     />
@@ -128,6 +128,12 @@ const SectionLogo = () => {
                             className="bg-gradient-to-r from-blue-400 to-blue-600 text-white px-10 py-3 rounded-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
                         >
                             Cultural
+                        </a>
+                        <a
+                            href="/technical"
+                            className="bg-gradient-to-r from-purple-400 to-purple-600 text-white px-10 py-3 rounded-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+                        >
+                            Technical
                         </a>
                     </div>
                 </div>
@@ -203,7 +209,7 @@ const BonhomieEvent = () => {
             {/* Bonhomie 2019 Section */}
             <section className="flex flex-col-reverse md:flex-row items-center md:space-x-8 my-12 bg-white rounded-lg shadow-lg p-8">
                 <div className="w-full md:w-5/12 mt-6 md:mt-0 text-center md:text-left space-y-6">
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-indigo-600">Bonhomie 2018 Highlights</h2>
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-indigo-600">Bonhomie 2019 Highlights</h2>
                     <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                         Take a trip down memory lane and watch the incredible moments from <span className="font-bold">Bonhomie 2019</span>! This video showcases the most thrilling competitions and artistic performances of that year.
                     </p>

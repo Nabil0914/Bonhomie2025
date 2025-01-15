@@ -39,10 +39,10 @@ const GirlsThrowBallRegistration = () => {
     };
 
     const addMember = () => {
-        if (teamMembers.length < 1) {
+        if (teamMembers.length < 9) {
             setTeamMembers([...teamMembers, { name: '', rollNo: '', department: '', year: '' }]);
         } else {
-            alert('You can only add up to 1 members.');
+            alert('You can only add up to 9 members.');
         }
     };
 
@@ -50,8 +50,8 @@ const GirlsThrowBallRegistration = () => {
         e.preventDefault();
 
 
-        if (teamMembers.length < 1) {
-            alert("Please provide at least 1 team members.");
+        if (teamMembers.length < 9) {
+            alert("Please provide at least 9 team members.");
             return;
         }
 
@@ -177,7 +177,7 @@ const GirlsThrowBallRegistration = () => {
                         <option value="CO">CO</option>
                         <option value="AIML">AIML</option>
                         <option value="DS">DS</option>
-                        <option value="DS">Bsc IT</option>
+                        <option value="Bsc IT">Bsc IT</option>
                         <option value="CIVIL">CIVIL</option>
                         <option value="ME">ME</option>
                         <option value="ELECTRICAL">ELECTRICAL</option>
@@ -218,7 +218,7 @@ const GirlsThrowBallRegistration = () => {
                 <h4 className="text-lg text-gradient-to-r from-orange-500 to-indigo-600 mb-2">
                     Team Member Details
                 </h4>
-                <p className="text-red-500 mb-4">Note: Only 1 members</p>
+                <p className="text-red-500 mb-4">Note: Only 9 members</p>
 
                 {teamMembers.map((member, index) => (
                     <div key={index}>

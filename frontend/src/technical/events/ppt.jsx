@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const GirlsRelayRegistration = () => {
+const PPTRegistration = () => {
     const [teamLead, setTeamLead] = useState({
                 name: '',
                 year: '',
@@ -37,10 +37,10 @@ const GirlsRelayRegistration = () => {
             };
         
             const addMember = () => {
-                if (teamMembers.length < 3) {
+                if (teamMembers.length < 2) {
                     setTeamMembers([...teamMembers, { name: '', rollNo: '', department: '', year: '' }]);
                 } else {
-                    alert('You can only add up to 3 members.');
+                    alert('You can only add up to 2 members.');
                 }
             };
         
@@ -48,8 +48,8 @@ const GirlsRelayRegistration = () => {
                 e.preventDefault();
         
         
-                if (teamMembers.length < 3) {
-                    alert("Please provide at least 3 team members.");
+                if (teamMembers.length < 2) {
+                    alert("Please provide at least 2 team members.");
                     return;
                 }
         
@@ -110,7 +110,7 @@ const GirlsRelayRegistration = () => {
             return (
                 <div className="container mx-auto mt-12 p-6 bg-white rounded-lg shadow-lg max-w-3xl">
                     <h2 className="text-center text-orange-500 font-bold text-xl mb-4">
-                        Girls Relay Registration Form
+                        PPT Competition Registration Form
                     </h2>
         
                     {/* Alert Message */}
@@ -216,7 +216,7 @@ const GirlsRelayRegistration = () => {
                         <h4 className="text-lg text-gradient-to-r from-orange-500 to-indigo-600 mb-2">
                             Team Member Details
                         </h4>
-                        <p className="text-red-500 mb-4">Note: Only 3 members</p>
+                        <p className="text-red-500 mb-4">Note: Only 8 members</p>
         
                         {teamMembers.map((member, index) => (
                             <div key={index}>
@@ -308,4 +308,4 @@ const GirlsRelayRegistration = () => {
             );
         };
 
-export default GirlsRelayRegistration;
+export default PPTRegistration;

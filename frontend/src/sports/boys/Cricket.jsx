@@ -13,7 +13,7 @@ const CrickeRegistration = () => {
         { name: '', rollNo: '', department: '', year: '' },
     ]);
 
-    const [eventName] = useState('Cricket');
+    const [eventName] = useState('Open Cricket');
     const [eventType] = useState('boys');
     const [eventCategory] = useState('group');
 
@@ -37,10 +37,10 @@ const CrickeRegistration = () => {
     };
 
     const addMember = () => {
-        if (teamMembers.length < 2) {
+        if (teamMembers.length < 13) {
             setTeamMembers([...teamMembers, { name: '', rollNo: '', department: '', year: '' }]);
         } else {
-            alert('You can only add up to 2 members.');
+            alert('You can only add up to 13 members.');
         }
     };
 
@@ -48,8 +48,8 @@ const CrickeRegistration = () => {
         e.preventDefault();
 
 
-        if (teamMembers.length < 2) {
-            alert("Please provide at least 2 team members.");
+        if (teamMembers.length < 13) {
+            alert("Please provide at least 13 team members.");
             return;
         }
 
@@ -110,7 +110,7 @@ const CrickeRegistration = () => {
     return (
         <div className="container mx-auto mt-12 p-6 bg-white rounded-lg shadow-lg max-w-3xl">
             <h2 className="text-center text-orange-500 font-bold text-xl mb-4">
-                Boys Cricket Registration Form
+                Boys Open Cricket Registration Form
             </h2>
 
             {/* Alert Message */}
@@ -175,7 +175,7 @@ const CrickeRegistration = () => {
                         <option value="CO">CO</option>
                         <option value="AIML">AIML</option>
                         <option value="DS">DS</option>
-                        <option value="DS">Bsc IT</option>
+                        <option value="Bsc IT">Bsc IT</option>
                         <option value="CIVIL">CIVIL</option>
                         <option value="ME">ME</option>
                         <option value="ELECTRICAL">ELECTRICAL</option>
@@ -216,7 +216,7 @@ const CrickeRegistration = () => {
                 <h4 className="text-lg text-gradient-to-r from-orange-500 to-indigo-600 mb-2">
                     Team Member Details
                 </h4>
-                <p className="text-red-500 mb-4">Note: Only 8 members</p>
+                <p className="text-red-500 mb-4">Note: Only 13 members</p>
 
                 {teamMembers.map((member, index) => (
                     <div key={index}>

@@ -37,10 +37,10 @@ const BGMIRegistrationForm = () => {
         };
     
         const addMember = () => {
-            if (teamMembers.length < 4) {
+            if (teamMembers.length < 3) {
                 setTeamMembers([...teamMembers, { name: '', rollNo: '', department: '', year: '' }]);
             } else {
-                alert('You can only add up to 4 members.');
+                alert('You can only add up to 3 members.');
             }
         };
     
@@ -48,8 +48,8 @@ const BGMIRegistrationForm = () => {
             e.preventDefault();
     
     
-            if (teamMembers.length < 4) {
-                alert("Please provide at least 4 team members.");
+            if (teamMembers.length < 3) {
+                alert("Please provide at least 3 team members.");
                 return;
             }
     
@@ -174,7 +174,7 @@ const BGMIRegistrationForm = () => {
                             <option value="CO">CO</option>
                             <option value="AIML">AIML</option>
                             <option value="DS">DS</option>
-                            <option value="DS">Bsc IT</option>
+                            <option value="Bsc IT">Bsc IT</option>
                             <option value="CIVIL">CIVIL</option>
                             <option value="ME">ME</option>
                             <option value="ELECTRICAL">ELECTRICAL</option>
@@ -215,7 +215,7 @@ const BGMIRegistrationForm = () => {
                     <h4 className="text-lg text-gradient-to-r from-orange-500 to-indigo-600 mb-2">
                         Team Member Details
                     </h4>
-                    <p className="text-red-500 mb-4">Note: Only 8 members</p>
+                    <p className="text-red-500 mb-4">Note: Only 3 members</p>
     
                     {teamMembers.map((member, index) => (
                         <div key={index}>
