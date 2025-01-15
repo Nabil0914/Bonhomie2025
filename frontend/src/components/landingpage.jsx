@@ -91,7 +91,7 @@ const Home = () => {
             <SectionLogo />
             <SectionWinners />
             <BonhomieEvent />
-            <SectionFaculty />
+            {/* <SectionFaculty /> */}
             <SectionContact />
         </div>
     );
@@ -125,13 +125,13 @@ const SectionLogo = () => {
                         </a>
                         <a
                             href="/cultural"
-                            className="bg-gradient-to-r from-blue-400 to-blue-600 text-white px-10 py-3 rounded-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+                            className="bg-gradient-to-r from-orange-400 to-orange-600  text-white px-10 py-3 rounded-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
                         >
                             Cultural
                         </a>
                         <a
                             href="/technical"
-                            className="bg-gradient-to-r from-purple-400 to-purple-600 text-white px-10 py-3 rounded-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+                            className="bg-gradient-to-r from-blue-400 to-blue-600 text-white px-10 py-3 rounded-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
                         >
                             Technical
                         </a>
@@ -267,27 +267,27 @@ const BonhomieEvent = () => {
 // SectionEvents Component
 const SectionWinners = () => (
     <section id="winners-section" className="py-20 bg-gray-100">
-        <h2 className="text-4xl font-bold text-blue-600 text-center mb-8">District Level Winners</h2>
+        <h2 className="text-4xl font-bold text-blue-600 text-center mb-8">Past Events</h2>
         <p className="text-gray-700 text-center max-w-2xl mx-auto mb-10">
-            Meet the winners of various district-level competitions. Their achievements represent the best in sports and cultural events!
+        Reliving the energy, excitement, and unforgettable moments. Thank you to everyone who made it a grand success
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <WinnerCard
                 imgSrc="../src/assets/glimpse1.jpg"
-                district="District A"
+                district="VolleyBall"
                 winner="Team Falcons"
                 description="Spike, serve, and score—it's game time on the volleyball court!"
             />
             <WinnerCard
                 imgSrc="../src/assets/glimpse2.jpg"
-                district="District B"
-                winner="Cricket Kings"
+                district="BGMI"
+                winner="Tech Kings"
                 description="Get a sneak peek into the action with BGMI Glimpse"
             />
             <WinnerCard
                 imgSrc="../src/assets/glimpse3.jpg"
-                district="District C"
-                winner="Tennis Titans"
+                district="Zaika"
+                winner="KGN Chef"
                 description="Battle of flavors: Where creativity meets competition in the ultimate cooking showdown!"
             />
         </div>
@@ -311,19 +311,19 @@ const WinnerCard = ({ imgSrc, district, winner, description }) => (
     </div>
 );
 
-const SectionFaculty = () => (
-    <section id="faculty-section" className="py-20 bg-gray-100">
-        <h2 className="text-4xl font-bold text-blue-600 text-center mb-8">Faculty In-Charges</h2>
-        <p className="text-gray-700 text-center max-w-2xl mx-auto mb-10">
-            Meet the dedicated faculty members who are leading and organizing these events with passion and commitment.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            <FacultyCard imgSrc="https://via.placeholder.com/150" name="Mohd Irfan" title="In-Charge, Football Tournament" />
-            <FacultyCard imgSrc="https://via.placeholder.com/150" name="Mohd Irfan" title="In-Charge, Cricket Championship" />
-            <FacultyCard imgSrc="https://via.placeholder.com/150" name="Mohd Irfan" title="In-Charge, Table Tennis" />
-        </div>
-    </section>
-);
+// const SectionFaculty = () => (
+//     <section id="faculty-section" className="py-20 bg-gray-100">
+//         <h2 className="text-4xl font-bold text-blue-600 text-center mb-8">Faculty In-Charges</h2>
+//         <p className="text-gray-700 text-center max-w-2xl mx-auto mb-10">
+//             Meet the dedicated faculty members who are leading and organizing these events with passion and commitment.
+//         </p>
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+//             <FacultyCard imgSrc="https://via.placeholder.com/150" name="Mohd Irfan" title="In-Charge, Football Tournament" />
+//             <FacultyCard imgSrc="https://via.placeholder.com/150" name="Mohd Irfan" title="In-Charge, Cricket Championship" />
+//             <FacultyCard imgSrc="https://via.placeholder.com/150" name="Mohd Irfan" title="In-Charge, Table Tennis" />
+//         </div>
+//     </section>
+// );
 
 // FacultyCard Component
 
